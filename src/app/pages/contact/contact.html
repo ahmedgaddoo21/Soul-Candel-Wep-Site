@@ -1,0 +1,122 @@
+<main class="contact-main">
+  <div class="container py-section">
+    <!-- Hero & Form Section -->
+    <section class="grid-12 items-start">
+      <!-- Text & Form Column -->
+      <div class="col-5 order-2 md-order-1 flex-col pt-12 md-pt-0 fade-in-up">
+        <div class="contact-intro">
+          <span class="uppercase tracking-widest subtitle block">Concierge Service</span>
+          <h1 class="font-serif hero-title">Reach Out to Soul</h1>
+          <p class="hero-desc">
+            Whether you seek a signature scent, desire a bespoke creation, or wish to inquire about wholesale partnerships, our dedicated concierge is here to assist you in crafting moments of tranquility.
+          </p>
+        </div>
+
+        <form (submit)="submitInquiry($event)" class="contact-form">
+          <div class="form-fields">
+            <!-- Name Input -->
+            <div class="form-group">
+              <input 
+                type="text" 
+                class="form-control" 
+                placeholder="Your Name" 
+                required 
+                [ngModel]="name()" 
+                (ngModelChange)="name.set($event)"
+                name="name" 
+              />
+            </div>
+            
+            <!-- Email Input -->
+            <div class="form-group">
+              <input 
+                type="email" 
+                class="form-control" 
+                placeholder="Email Address" 
+                required 
+                [ngModel]="email()" 
+                (ngModelChange)="email.set($event)"
+                name="email" 
+              />
+            </div>
+            
+            <!-- Inquiry Type -->
+            <div class="form-group select-wrapper">
+              <select 
+                class="form-control select-control" 
+                required
+                [ngModel]="interest()" 
+                (ngModelChange)="interest.set($event)"
+                name="interest"
+              >
+                <option value="" disabled selected>Nature of Inquiry</option>
+                <option value="signature">Signature Collection</option>
+                <option value="custom">Bespoke / Custom Order</option>
+                <option value="wholesale">Wholesale Partnership</option>
+                <option value="other">Other</option>
+              </select>
+              <span class="material-symbols-outlined select-arrow">expand_more</span>
+            </div>
+            
+            <!-- Message Input -->
+            <div class="form-group">
+              <textarea 
+                class="form-control message-control" 
+                placeholder="Your Message" 
+                required 
+                rows="4"
+                [ngModel]="message()" 
+                (ngModelChange)="message.set($event)"
+                name="message"
+              ></textarea>
+            </div>
+          </div>
+          
+          <button type="submit" class="btn btn-primary w-full md-w-auto">
+            Send Message
+          </button>
+        </form>
+
+        <!-- Direct Connect links -->
+        <div class="direct-connect">
+          <span class="uppercase tracking-widest subtitle block">Direct Connect</span>
+          <div class="connect-links">
+            <a [href]="'https://wa.me/' + cartService.whatsappNum()" target="_blank" class="connect-link group">
+              <span class="material-symbols-outlined icon">chat</span>
+              <span class="label">WhatsApp Concierge</span>
+            </a>
+            <a [href]="'https://instagram.com/' + cartService.instagramUser()" target="_blank" class="connect-link group">
+              <span class="material-symbols-outlined icon">photo_camera</span>
+              <span class="label">&#64;{{ cartService.instagramUser() }}</span>
+            </a>
+            <a href="mailto:hello&#64;soulcandle.com" class="connect-link group">
+              <span class="material-symbols-outlined icon">mail</span>
+              <span class="label">hello&#64;soulcandle.com</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image Column -->
+      <div class="col-7 order-1 md-order-2 image-col fade-in-up">
+        <div class="editorial-image-wrapper">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAELoFj3vgNRO8f2MExvxPPE0AwAqjEUW19VYY1NEnaKuJjWnHJqFpAz5U3CbJt19fvMPLjQHVoX6tZF1ktGpgXebNsmlwqL5-2bQ4lLC3n71Ko-FIPe3jncbApdqTSga3i8PXsczrMoSMQ20_3MZSmqPpKDR-aq4tbhxwhHzkWzD-cXGFaB_Q5g2kBt_58XS2ugAu7piHaE47o7bZnf7h_qQYESiMSzfi63fDp0G_5Pkf0c8laPPqlAouLgnQ5JlQEAupHEsgP1cv" alt="Soul Candle elegant product presentation" class="editorial-img" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Studio Section (Visual Break) -->
+    <section class="studio-section mt-120 fade-in-up">
+      <div class="grid-12 items-center">
+        <div class="col-8 offset-2 studio-banner relative">
+          <div class="studio-img-bg"></div>
+          <div class="studio-content">
+            <span class="uppercase tracking-widest subtitle block text-gold">Our Studio</span>
+            <h2 class="font-serif hero-title text-white">Crafted in Serenity</h2>
+            <p class="text-white opacity-80 mt-2">Visits by appointment only for bespoke consultations.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>

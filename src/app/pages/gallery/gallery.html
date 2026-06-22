@@ -1,0 +1,50 @@
+<main class="gallery-main">
+  <!-- Editorial Header -->
+  <header class="gallery-header text-center">
+    <div class="container">
+      <h1 class="font-serif hero-title">The Soul Lookbook</h1>
+      <div class="floral-divider">
+        <span class="material-symbols-outlined">local_florist</span>
+      </div>
+      <p class="font-serif italic hero-desc">
+        A visual journey through our handcrafted rituals, captured in the soft glow of intention and light.
+      </p>
+    </div>
+  </header>
+
+  <!-- Masonry Gallery Section -->
+  <section class="gallery-section">
+    <div class="container">
+      <div class="masonry-grid">
+        <div class="masonry-item reveal-gallery" *ngFor="let item of galleryItems; let idx = index" [style.transition-delay]="idx * 100 + 'ms'" (click)="zoomImage(item.image)">
+          <div class="item-wrapper glass-card">
+            <img [src]="item.image" [alt]="item.alt" loading="lazy" />
+            <div class="item-hover-overlay flex-center">
+              <span class="font-serif item-title">{{ item.title }}</span>
+              <span class="material-symbols-outlined zoom-icon">zoom_in</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA section -->
+  <section class="gallery-cta py-section text-center">
+    <div class="container">
+      <h2 class="font-serif section-title text-gold">Bring the light home.</h2>
+      <div class="cta-buttons flex-center">
+        <a routerLink="/collections" class="btn btn-primary">Shop the Collection</a>
+        <a routerLink="/contact" class="btn btn-outline">Request Custom Order</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fullscreen Image Zoom Overlay -->
+  <div class="zoom-overlay" *ngIf="selectedImage() as imgUrl" (click)="closeZoom()">
+    <button class="close-zoom-btn" (click)="closeZoom()">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+    <img [src]="imgUrl" class="zoomed-image" (click)="$event.stopPropagation()" />
+  </div>
+</main>

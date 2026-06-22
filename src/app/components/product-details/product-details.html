@@ -1,0 +1,90 @@
+<div class="modal-overlay" *ngIf="productDetails.product() as prod" (click)="close()">
+  <div class="modal-content glass-card" (click)="$event.stopPropagation()">
+    <!-- Close button -->
+    <button class="close-btn" (click)="close()">
+      <span class="material-symbols-outlined">close</span>
+    </button>
+
+    <div class="modal-body">
+      <!-- Image Column -->
+      <div class="modal-image-col">
+        <img [src]="prod.image" [alt]="prod.name" class="product-image" />
+        <span class="category-tag">{{ prod.categoryLabel }}</span>
+      </div>
+
+      <!-- Details Column -->
+      <div class="modal-details-col">
+        <div class="header-info">
+          <h2 class="font-serif product-title">{{ prod.name }}</h2>
+          <p class="product-price">{{ prod.price }} EGP</p>
+        </div>
+
+        <p class="product-description">{{ prod.description }}</p>
+
+        <!-- Scent Profile -->
+        <div class="detail-section">
+          <h3 class="section-title"><span class="material-symbols-outlined icon">local_florist</span> Scent Journey</h3>
+          <div class="scent-notes">
+            <div class="note-box">
+              <span class="note-label">Top Note</span>
+              <span class="note-value">{{ prod.scentProfile.top }}</span>
+            </div>
+            <div class="note-box">
+              <span class="note-label">Heart Note</span>
+              <span class="note-value">{{ prod.scentProfile.heart }}</span>
+            </div>
+            <div class="note-box">
+              <span class="note-label">Base Note</span>
+              <span class="note-value">{{ prod.scentProfile.base }}</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Specifications -->
+        <div class="detail-section specs-grid">
+          <div class="spec-item">
+            <span class="spec-label">Burn Time</span>
+            <span class="spec-value">{{ prod.details.burnTime }}</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">Wax Weight</span>
+            <span class="spec-value">{{ prod.details.weight }}</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">Wax Type</span>
+            <span class="spec-value">{{ prod.details.waxType }}</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-label">Dimensions</span>
+            <span class="spec-value">{{ prod.details.dimensions }}</span>
+          </div>
+        </div>
+
+        <!-- Experiential (Mood / Occasion / Inspiration) -->
+        <div class="detail-section experiential">
+          <p><strong>Mood:</strong> <span>{{ prod.mood }}</span></p>
+          <p><strong>Occasion:</strong> <span>{{ prod.occasion }}</span></p>
+          <p *ngIf="prod.inspiration"><strong>Inspiration:</strong> <span>{{ prod.inspiration }}</span></p>
+        </div>
+
+        <!-- Actions -->
+        <div class="modal-actions-container">
+          <div class="qty-selector">
+            <button class="qty-btn" (click)="decrement()"><span class="material-symbols-outlined">remove</span></button>
+            <span class="qty-number">{{ quantity() }}</span>
+            <button class="qty-btn" (click)="increment()"><span class="material-symbols-outlined">add</span></button>
+          </div>
+
+          <div class="buttons-row">
+            <button class="btn btn-primary" (click)="addToCart()">
+              <span class="material-symbols-outlined">shopping_bag</span> Add To Cart
+            </button>
+            <button class="btn btn-whatsapp" (click)="orderDirectWhatsApp()">
+              <span class="material-symbols-outlined">chat</span> Order Direct
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

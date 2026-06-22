@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Collections - Soul Candles</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-container": "#7a473d",
+                        "on-error": "#ffffff",
+                        "surface-container-high": "#eae8e4",
+                        "outline-variant": "#d0c5af",
+                        "on-secondary-fixed": "#351009",
+                        "on-background": "#1b1c1a",
+                        "secondary-fixed-dim": "#fbb6a8",
+                        "background": "#fbf9f5",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#77574c",
+                        "error": "#ba1a1a",
+                        "surface-container": "#efeeea",
+                        "on-error-container": "#93000a",
+                        "on-surface-variant": "#4d4635",
+                        "surface": "#fbf9f5",
+                        "primary-fixed": "#ffe088",
+                        "secondary-fixed": "#ffdad3",
+                        "on-primary-fixed-variant": "#574500",
+                        "inverse-primary": "#e9c349",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#30312e",
+                        "on-primary-container": "#554300",
+                        "surface-container-highest": "#e4e2de",
+                        "surface-tint": "#735c00",
+                        "on-surface": "#1b1c1a",
+                        "surface-bright": "#fbf9f5",
+                        "tertiary-container": "#d2aa9c",
+                        "surface-variant": "#e4e2de",
+                        "on-tertiary-container": "#5b3e34",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed-dim": "#e9c349",
+                        "on-tertiary-fixed-variant": "#5d4035",
+                        "on-tertiary-fixed": "#2c160d",
+                        "tertiary-fixed": "#ffdbcf",
+                        "tertiary-fixed-dim": "#e7bdaf",
+                        "surface-dim": "#dbdad6",
+                        "outline": "#7f7663",
+                        "primary-container": "#d4af37",
+                        "on-secondary": "#ffffff",
+                        "secondary": "#865046",
+                        "on-secondary-fixed-variant": "#6a3930",
+                        "secondary-container": "#feb8ab",
+                        "surface-container-low": "#f5f3ef",
+                        "primary": "#735c00",
+                        "inverse-on-surface": "#f2f0ed",
+                        "on-primary-fixed": "#241a00",
+                        "error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "margin-mobile": "20px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "section-gap": "120px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "headline-lg": ["Playfair Display"],
+                        "title-md": ["Playfair Display"],
+                        "label-sm": ["DM Sans"],
+                        "body-lg": ["DM Sans"],
+                        "body-md": ["DM Sans"],
+                        "display-lg": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["28px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "title-md": ["20px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "label-sm": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #fbf9f5; }
+        .clip-image { clip-path: inset(0); transition: clip-path 0.8s cubic-bezier(0.25, 1, 0.5, 1); }
+        .group:hover .clip-image { clip-path: inset(2%); }
+    </style>
+</head>
+<body class="font-body-md text-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/90 dark:bg-surface-dim/90 backdrop-blur-md border-b border-outline-variant/30 shadow-sm transition-all duration-300">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<!-- Mobile Menu Toggle -->
+<div class="md:hidden">
+<button class="text-primary p-2 focus:outline-none">
+<span class="material-symbols-outlined text-2xl">menu</span>
+</button>
+</div>
+<!-- Brand Logo -->
+<a class="font-display-lg text-display-lg text-primary dark:text-primary-fixed-dim italic" href="#">Soul</a>
+<!-- Navigation Links (Desktop) -->
+<div class="hidden md:flex space-x-8 items-center">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-sm text-label-sm tracking-widest uppercase" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-sm text-label-sm tracking-widest uppercase" href="#">About</a>
+<a class="text-primary font-bold border-b border-primary pb-1 font-label-sm text-label-sm tracking-widest uppercase" href="#">Collections</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-sm text-label-sm tracking-widest uppercase" href="#">Gallery</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-sm text-label-sm tracking-widest uppercase" href="#">Custom Orders</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-label-sm text-label-sm tracking-widest uppercase" href="#">Contact</a>
+</div>
+<!-- Trailing Icons -->
+<div class="flex space-x-4 items-center text-primary dark:text-primary-fixed">
+<button class="hover:text-surface-tint transition-all duration-300 focus:opacity-70">
+<span class="material-symbols-outlined">shopping_bag</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="pt-24 md:pt-32 pb-section-gap">
+<!-- Hero Section -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center py-16 md:py-24">
+<h1 class="font-display-lg text-[40px] md:text-display-lg text-on-surface mb-6">The Collections</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto mb-12">
+                Curated rituals designed to transform your space into a sanctuary of light and scent.
+            </p>
+<div class="w-24 h-[1px] bg-primary-container mx-auto"></div>
+</section>
+<!-- Series 1: The Floral Ritual -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-16">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-6 relative group overflow-hidden">
+<div class="absolute inset-0 bg-surface-container-high/20 rounded-lg transform -rotate-2 scale-105 transition-transform duration-500 group-hover:rotate-0"></div>
+<img alt="The Floral Ritual Collection featuring delicate rose-shaped candles" class="w-full h-auto object-cover rounded-sm clip-image shadow-sm relative z-10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNS1hl7UpYAlDSs-VPBJdtfeWjsdmGmGXFBezBWSGsCImyQtSVLChU7R01a9YdEiQ12ZS-9IL7jxRy3W16udsfceHciozas-ZiV4oGNVW4v3GX-BT_87BfKyPEjwCZ3grTI-IX838_TCh0FDAtkxrGXQOkGxWQ99r_vSaqLFYLz_Pn7tGk3hc2vBu3rso6sYejgn-c1Vg5zouMhlemUoQw41bSZSRW4MCY16Yd1PwbX7watBP2KhLNlVPg4bExU3fx10d3RkqnMt79"/>
+</div>
+<div class="md:col-span-5 md:col-start-8 space-y-6 pt-8 md:pt-0">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">The Floral Ritual</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        Immerse yourself in a blooming sanctuary. Our floral series captures the essence of a spring garden, meticulously hand-crafted into delicate petals of wax.
+                    </p>
+<ul class="space-y-3 font-body-md text-body-md text-on-surface-variant">
+<li class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-primary-container mr-3"></span> Hand-poured Artistry</li>
+<li class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-primary-container mr-3"></span> Botanical Essences</li>
+</ul>
+<div class="pt-4">
+<a class="inline-block border border-primary-container text-on-surface font-label-sm text-label-sm uppercase tracking-widest px-8 py-3 hover:bg-primary-container hover:text-on-primary-container transition-colors duration-300" href="#">View Series</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Divider -->
+<div class="flex justify-center items-center py-8">
+<div class="h-[1px] w-12 bg-outline-variant/50"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-primary-container mx-4"></div>
+<div class="h-[1px] w-12 bg-outline-variant/50"></div>
+</div>
+<!-- Series 2: Gourmand Blends -->
+<section class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-16">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-5 space-y-6 pb-8 md:pb-0 order-2 md:order-1">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Gourmand Blends</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        A feast for the senses. Indulge in rich, comforting aromas reminiscent of decadent desserts and sweet memories, poured into elegant glass vessels.
+                    </p>
+<ul class="space-y-3 font-body-md text-body-md text-on-surface-variant">
+<li class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-secondary-container mr-3"></span> Whipped Wax Textures</li>
+<li class="flex items-center"><span class="w-1.5 h-1.5 rounded-full bg-secondary-container mr-3"></span> Sweet &amp; Warm Profiles</li>
+</ul>
+<div class="pt-4">
+<a class="inline-block border border-primary-container text-on-surface font-label-sm text-label-sm uppercase tracking-widest px-8 py-3 hover:bg-primary-container hover:text-on-primary-container transition-colors duration-300" href="#">View Series</a>
+</div>
+</div>
+<div class="md:col-span-6 md:col-start-7 relative group overflow-hidden order-1 md:order-2">
+<div class="absolute inset-0 bg-secondary-container/10 rounded-lg transform rotate-2 scale-105 transition-transform duration-500 group-hover:rotate-0"></div>
+<img alt="Gourmand Blends featuring a strawberry cream dessert candle" class="w-full h-[600px] object-cover rounded-sm clip-image shadow-sm relative z-10" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMTFk3zxmTe5MVHZu_mkZZoZdz4w6UuWqCr_amliuFYO-9VN9e49nnyw5dpCVZVms8Cq02u_pRqu0_9XBjekG6wa9z4mK5tPUv5WEo4qjjc4Q-8WwKth0zmXiReSd8BjcyyxnzCNnUCfssT8rpKn-tLf-XsT8FUd9-yH4QGzvxijNmQZSpvhvIB9n1oAVwdD6vwkedX6-iXNdRPOMHeSE1ltM5M1Fve29np1ySMQvvsAIz_mYatsL5mo_NeUuK0suVop-xIgYlP8Jp"/>
+</div>
+</div>
+</section>
+<!-- Divider -->
+<div class="flex justify-center items-center py-8">
+<div class="h-[1px] w-12 bg-outline-variant/50"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-primary-container mx-4"></div>
+<div class="h-[1px] w-12 bg-outline-variant/50"></div>
+</div>
+<!-- Interactive Grid -->
+<section class="bg-surface-container-low py-20 mt-16">
+<div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+<div class="text-center mb-12">
+<h3 class="font-title-md text-title-md text-on-surface">Curated Vignettes</h3>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Grid Item 1 -->
+<div class="group cursor-pointer relative overflow-hidden bg-surface rounded-sm shadow-sm hover:shadow-md transition-shadow duration-300">
+<div class="aspect-w-4 aspect-h-3 overflow-hidden">
+<img alt="Pastel Home Decor curated candle set" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgr-817YhZ1d8t2oJZ-BKMb3Jy4RX8RVYRuL0xfJ2PNPnXNdgUAXBZwD8Cev6QVgx4Lsi60z3ptjfyzVDtX16hCHmS4Qx65pv7cfiDU7_d2dnKyK0I_FJlPGH9r5ygHcJHc2yeRJEYv6PaVJQpWBdmjWNy4ElyVCWml98pQqeenSBYdlGyA8r6JBNfeZcFQ11aEqIZgcKuUsJeB-0Pv8pP3ah7n0ftjq22YAVs7Fz3bmPmI1wcxBk4a0HRK0JoBV2yUDMxGXp3Wip4"/>
+</div>
+<div class="p-6 text-center absolute bottom-0 w-full bg-gradient-to-t from-surface/90 to-transparent">
+<h4 class="font-title-md text-title-md text-on-surface mb-1">Pastel Home Decor</h4>
+<span class="inline-block bg-secondary-container/50 text-on-secondary-container font-label-sm text-[10px] px-3 py-1 rounded-full uppercase tracking-wider">Set of 3</span>
+</div>
+</div>
+<!-- Grid Item 2 -->
+<div class="group cursor-pointer relative overflow-hidden bg-surface rounded-sm shadow-sm hover:shadow-md transition-shadow duration-300">
+<div class="aspect-w-4 aspect-h-3 overflow-hidden">
+<img alt="Limited Edition floral embedded candles" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtJlcjW0KIkEa3AXUDlZeJg88bGZUWYA9BNps79NZwjnm-N-ZUf7Ilo_94-uR4Xdo32tJxNLPYi1q2UUhou4Vx2taZvuK0BJQeXxua6wpW6QIlGEmEQaJo8K62tNGVAoCzRLSoM4j3VM7V6Z36FE-qCRImGaPiJySmORC_tnqJz9Eiwaw303A9Bt35n8UFXBv1UpMwTPFccMqPkybf_1kblYCRMFRJJdEKaQG3KH8NJ29uTkTiEqKS4aIuC_WT2ooUIl1JwCktK4xX"/>
+</div>
+<div class="p-6 text-center absolute bottom-0 w-full bg-gradient-to-t from-surface/90 to-transparent">
+<h4 class="font-title-md text-title-md text-on-surface mb-1">Limited Editions</h4>
+<span class="inline-block bg-primary-container/30 text-on-surface font-label-sm text-[10px] px-3 py-1 rounded-full uppercase tracking-wider">Seasonal</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Brand Philosophy Quote -->
+<section class="py-24 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center">
+<span class="material-symbols-outlined text-primary-container/50 text-4xl mb-6">format_quote</span>
+<blockquote class="font-display-lg text-display-lg text-on-surface italic max-w-4xl mx-auto leading-tight">
+                "We don't just pour wax; we curate atmospheres. Every collection is a silent poem dedicated to the sanctuary of your home."
+            </blockquote>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full pt-section-gap pb-12 bg-surface-container-low dark:bg-surface-container-lowest border-t border-outline-variant">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-2">
+<a class="font-display-lg text-display-lg text-primary mb-4 block italic" href="#">Soul</a>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm mt-4">
+                    Artisanal home fragrances crafted with intention. Elevate your daily rituals with our Luminous Sanctuary collections.
+                </p>
+</div>
+<div class="col-span-1">
+<h4 class="font-title-md text-title-md text-on-surface mb-6">Information</h4>
+<ul class="space-y-3 font-body-md text-body-md">
+<li><a class="text-on-surface-variant hover:text-primary transition-opacity hover:opacity-80 focus:ring-1 focus:ring-primary outline-none" href="#">Privacy Policy</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-opacity hover:opacity-80 focus:ring-1 focus:ring-primary outline-none" href="#">Shipping &amp; Returns</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-opacity hover:opacity-80 focus:ring-1 focus:ring-primary outline-none" href="#">Wholesale</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-opacity hover:opacity-80 focus:ring-1 focus:ring-primary outline-none" href="#">FAQ</a></li>
+</ul>
+</div>
+<div class="col-span-1">
+<h4 class="font-title-md text-title-md text-on-surface mb-6">Connect</h4>
+<div class="flex space-x-4">
+<a class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary transition-all duration-300" href="#">
+<span class="material-symbols-outlined">camera_alt</span>
+</a>
+<a class="w-10 h-10 rounded-full border border-outline-variant flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary transition-all duration-300" href="#">
+<span class="material-symbols-outlined">mail</span>
+</a>
+</div>
+</div>
+<div class="col-span-1 md:col-span-4 mt-12 pt-8 border-t border-outline-variant/50 text-center md:text-left">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">© 2024 Soul Candles Made With Love. All Rights Reserved.</p>
+</div>
+</div>
+</footer>
+</body></html>

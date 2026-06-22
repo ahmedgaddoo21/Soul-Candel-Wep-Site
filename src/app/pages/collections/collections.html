@@ -1,0 +1,145 @@
+<main class="collections-main">
+  <!-- Editorial Header -->
+  <header class="collections-header text-center">
+    <div class="container">
+      <h1 class="font-serif hero-title">The Collections</h1>
+      <p class="hero-desc">
+        Curated rituals designed to transform your space into a sanctuary of light and scent.
+      </p>
+      <div class="floral-divider">
+        <span class="material-symbols-outlined">local_florist</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Filter Bar -->
+  <section class="filter-section">
+    <div class="container flex-center">
+      <div class="filter-bar glass-card">
+        <button [class.active]="activeFilter() === 'all'" (click)="setFilter('all')">All Rituals</button>
+        <button [class.active]="activeFilter() === 'floral'" (click)="setFilter('floral')">Floral Series</button>
+        <button [class.active]="activeFilter() === 'gourmand'" (click)="setFilter('gourmand')">Gourmand Blends</button>
+        <button [class.active]="activeFilter() === 'limited'" (click)="setFilter('limited')">Limited Edition</button>
+        <button [class.active]="activeFilter() === 'signature'" (click)="setFilter('signature')">Signature Series</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Catalog Grid -->
+  <section class="catalog-section py-section">
+    <div class="container">
+      <div class="catalog-grid">
+        <!-- Loop Products -->
+        <div class="product-card reveal-card" *ngFor="let prod of filteredProducts(); let idx = index" (click)="openDetails(prod)">
+          <div class="prod-img-box">
+            <img [src]="prod.image" [alt]="prod.name" class="prod-img" loading="lazy" />
+            <span class="prod-tag">{{ prod.categoryLabel }}</span>
+          </div>
+          <div class="prod-info">
+            <div class="flex-between name-price">
+              <h3 class="font-serif prod-name">{{ prod.name }}</h3>
+              <span class="prod-price">{{ prod.price }} EGP</span>
+            </div>
+            
+            <div class="prod-details-meta">
+              <span class="burn-time"><span class="material-symbols-outlined icon">schedule</span> {{ prod.details.burnTime }}</span>
+              <span class="wax-weight"><span class="material-symbols-outlined icon">scale</span> {{ prod.details.weight }}</span>
+            </div>
+            
+            <div class="prod-actions">
+              <button class="action-btn outline-card" (click)="$event.stopPropagation(); openDetails(prod)">Details</button>
+              <button class="action-btn wa-card" (click)="addToCart(prod, $event)">
+                <span class="material-symbols-outlined icon">shopping_bag</span> Add to Cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Series 1: The Floral Ritual Showcase -->
+  <section class="series-showcase py-section bg-low border-y">
+    <div class="container grid-12 items-center">
+      <div class="col-6 relative overflow-hidden group img-box">
+        <div class="img-frame-bg"></div>
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNS1hl7UpYAlDSs-VPBJdtfeWjsdmGmGXFBezBWSGsCImyQtSVLChU7R01a9YdEiQ12ZS-9IL7jxRy3W16udsfceHciozas-ZiV4oGNVW4v3GX-BT_87BfKyPEjwCZ3grTI-IX838_TCh0FDAtkxrGXQOkGxWQ99r_vSaqLFYLz_Pn7tGk3hc2vBu3rso6sYejgn-c1Vg5zouMhlemUoQw41bSZSRW4MCY16Yd1PwbX7watBP2KhLNlVPg4bExU3fx10d3RkqnMt79" alt="The Floral Ritual Collection" class="showcase-img" />
+      </div>
+      <div class="col-5 space-y info-box">
+        <h2 class="font-serif section-title">The Floral Ritual</h2>
+        <div class="accent-line"></div>
+        <p class="text-description">
+          Immerse yourself in a blooming sanctuary. Our floral series captures the essence of a spring garden, meticulously hand-crafted into delicate petals of wax.
+        </p>
+        <ul class="bullet-list">
+          <li><span class="bullet"></span> Hand-poured Artistry</li>
+          <li><span class="bullet"></span> Botanical Essences</li>
+        </ul>
+        <button class="btn btn-primary" (click)="setFilter('floral')">View Series</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Series 2: Gourmand Blends Showcase -->
+  <section class="series-showcase py-section">
+    <div class="container grid-12 items-center">
+      <div class="col-5 order-2 md-order-1 space-y info-box">
+        <h2 class="font-serif section-title">Gourmand Blends</h2>
+        <div class="accent-line"></div>
+        <p class="text-description">
+          A feast for the senses. Indulge in rich, comforting aromas reminiscent of decadent desserts and sweet memories, poured into elegant glass vessels.
+        </p>
+        <ul class="bullet-list">
+          <li><span class="bullet bg-sec"></span> Whipped Wax Textures</li>
+          <li><span class="bullet bg-sec"></span> Sweet & Warm Profiles</li>
+        </ul>
+        <button class="btn btn-primary" (click)="setFilter('gourmand')">View Series</button>
+      </div>
+      <div class="col-6 order-1 md-order-2 relative overflow-hidden group img-box">
+        <div class="img-frame-bg sec"></div>
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMTFk3zxmTe5MVHZu_mkZZoZdz4w6UuWqCr_amliuFYO-9VN9e49nnyw5dpCVZVms8Cq02u_pRqu0_9XBjekG6wa9z4mK5tPUv5WEo4qjjc4Q-8WwKth0zmXiReSd8BjcyyxnzCNnUCfssT8rpKn-tLf-XsT8FUd9-yH4QGzvxijNmQZSpvhvIB9n1oAVwdD6vwkedX6-iXNdRPOMHeSE1ltM5M1Fve29np1ySMQvvsAIz_mYatsL5mo_NeUuK0suVop-xIgYlP8Jp" alt="Gourmand Blends strawberry candle" class="showcase-img h-600-obj" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Curated Vignettes -->
+  <section class="vignette-section py-section bg-low">
+    <div class="container">
+      <div class="text-center mb-60">
+        <h3 class="font-serif section-title text-center text-gold">Curated Vignettes</h3>
+      </div>
+      
+      <div class="vignette-grid grid-12">
+        <div class="col-6 vignette-card group">
+          <div class="vignette-img-box">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgr-817YhZ1d8t2oJZ-BKMb3Jy4RX8RVYRuL0xfJ2PNPnXNdgUAXBZwD8Cev6QVgx4Lsi60z3ptjfyzVDtX16hCHmS4Qx65pv7cfiDU7_d2dnKyK0I_FJlPGH9r5ygHcJHc2yeRJEYv6PaVJQpWBdmjWNy4ElyVCWml98pQqeenSBYdlGyA8r6JBNfeZcFQ11aEqIZgcKuUsJeB-0Pv8pP3ah7n0ftjq22YAVs7Fz3bmPmI1wcxBk4a0HRK0JoBV2yUDMxGXp3Wip4" alt="Pastel Home Decor set" class="vignette-img" />
+          </div>
+          <div class="vignette-content">
+            <h4 class="font-serif vignette-name">Pastel Home Decor</h4>
+            <span class="tag tag-pink">Set of 3</span>
+          </div>
+        </div>
+
+        <div class="col-6 vignette-card group">
+          <div class="vignette-img-box">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCtJlcjW0KIkEa3AXUDlZeJg88bGZUWYA9BNps79NZwjnm-N-ZUf7Ilo_94-uR4Xdo32tJxNLPYi1q2UUhou4Vx2taZvuK0BJQeXxua6wpW6QIlGEmEQaJo8K62tNGVAoCzRLSoM4j3VM7V6Z36FE-qCRImGaPiJySmORC_tnqJz9Eiwaw303A9Bt35n8UFXBv1UpMwTPFccMqPkybf_1kblYCRMFRJJdEKaQG3KH8NJ29uTkTiEqKS4aIuC_WT2ooUIl1JwCktK4xX" alt="Limited Editions candles" class="vignette-img" />
+          </div>
+          <div class="vignette-content">
+            <h4 class="font-serif vignette-name">Limited Editions</h4>
+            <span class="tag tag-gold">Seasonal</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote -->
+  <section class="philosophy-quote py-section text-center">
+    <div class="container">
+      <span class="material-symbols-outlined quote-icon">format_quote</span>
+      <blockquote class="font-serif italic quote-text">
+        "We don't just pour wax; we curate atmospheres. Every collection is a silent poem dedicated to the sanctuary of your home."
+      </blockquote>
+    </div>
+  </section>
+</main>

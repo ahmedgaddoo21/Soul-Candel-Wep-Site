@@ -1,0 +1,53 @@
+<app-navbar></app-navbar>
+
+<router-outlet></router-outlet>
+
+<!-- Shared overlays -->
+<app-cart-drawer></app-cart-drawer>
+<app-product-details></app-product-details>
+
+<!-- Shared Footer -->
+<footer class="app-footer">
+  <div class="footer-container grid-12">
+    <div class="col-4 footer-brand-col">
+      <a routerLink="/" class="brand-logo font-serif italic">Soul</a>
+      <p class="footer-desc">Handcrafted candles designed with intentionality and high-end craftsmanship.</p>
+    </div>
+    
+    <div class="col-3">
+      <h4 class="font-serif footer-title">Discover</h4>
+      <ul class="footer-links">
+        <li><a routerLink="/">Home</a></li>
+        <li><a routerLink="/about">Our Story</a></li>
+        <li><a routerLink="/collections">Collections</a></li>
+        <li><a routerLink="/gallery">Lookbook</a></li>
+      </ul>
+    </div>
+    
+    <div class="col-3">
+      <h4 class="font-serif footer-title">Support</h4>
+      <ul class="footer-links">
+        <li><a routerLink="/contact">Contact Us</a></li>
+        <li><a href="#">Shipping & Returns</a></li>
+        <li><a href="#">Wholesale</a></li>
+        <li><a href="#">FAQ</a></li>
+      </ul>
+    </div>
+    
+    <div class="col-2">
+      <h4 class="font-serif footer-title">Connect</h4>
+      <div class="footer-social-icons">
+        <a href="https://instagram.com/soulcandle" target="_blank" aria-label="Instagram">
+          <span class="material-symbols-outlined">camera_alt</span>
+        </a>
+        <a href="mailto:hello@soulcandle.com" aria-label="Email">
+          <span class="material-symbols-outlined">mail</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  
+  <div class="footer-bottom text-center">
+    <p>© 2026 Soul Candles Made With Love. All Rights Reserved.</p>
+  </div>
+</footer>

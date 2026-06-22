@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Reach Out to Soul | Luxury Contact</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=DM+Sans:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary": "#ffffff",
+                    "on-primary-fixed-variant": "#574500",
+                    "on-secondary-container": "#7a473d",
+                    "surface-tint": "#735c00",
+                    "on-primary-fixed": "#241a00",
+                    "on-surface": "#1b1c1a",
+                    "tertiary-fixed-dim": "#e7bdaf",
+                    "on-secondary-fixed-variant": "#6a3930",
+                    "surface-variant": "#e4e2de",
+                    "error": "#ba1a1a",
+                    "tertiary-container": "#d2aa9c",
+                    "on-tertiary-container": "#5b3e34",
+                    "surface-dim": "#dbdad6",
+                    "surface-container-lowest": "#ffffff",
+                    "on-surface-variant": "#4d4635",
+                    "surface-container-low": "#f5f3ef",
+                    "primary-fixed-dim": "#e9c349",
+                    "inverse-on-surface": "#f2f0ed",
+                    "surface-bright": "#fbf9f5",
+                    "error-container": "#ffdad6",
+                    "surface-container-high": "#eae8e4",
+                    "primary": "#735c00",
+                    "inverse-surface": "#30312e",
+                    "on-tertiary-fixed": "#2c160d",
+                    "surface-container-highest": "#e4e2de",
+                    "secondary": "#865046",
+                    "inverse-primary": "#e9c349",
+                    "secondary-fixed": "#ffdad3",
+                    "surface-container": "#efeeea",
+                    "on-error-container": "#93000a",
+                    "outline-variant": "#d0c5af",
+                    "tertiary": "#77574c",
+                    "tertiary-fixed": "#ffdbcf",
+                    "on-primary-container": "#554300",
+                    "on-error": "#ffffff",
+                    "primary-container": "#d4af37",
+                    "on-background": "#1b1c1a",
+                    "secondary-fixed-dim": "#fbb6a8",
+                    "secondary-container": "#feb8ab",
+                    "on-tertiary-fixed-variant": "#5d4035",
+                    "on-secondary": "#ffffff",
+                    "outline": "#7f7663",
+                    "on-primary": "#ffffff",
+                    "background": "#fbf9f5",
+                    "primary-fixed": "#ffe088",
+                    "on-secondary-fixed": "#351009",
+                    "surface": "#fbf9f5"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "section-gap": "120px",
+                    "container-max": "1280px",
+                    "gutter": "24px",
+                    "margin-mobile": "20px",
+                    "unit": "8px",
+                    "margin-desktop": "64px"
+            },
+            "fontFamily": {
+                    "title-md": [
+                            "Playfair Display"
+                    ],
+                    "label-sm": [
+                            "DM Sans"
+                    ],
+                    "headline-lg-mobile": [
+                            "Playfair Display"
+                    ],
+                    "body-md": [
+                            "DM Sans"
+                    ],
+                    "display-lg": [
+                            "Playfair Display"
+                    ],
+                    "headline-lg": [
+                            "Playfair Display"
+                    ],
+                    "body-lg": [
+                            "DM Sans"
+                    ]
+            },
+            "fontSize": {
+                    "title-md": [
+                            "20px",
+                            {
+                                    "lineHeight": "1.4",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "label-sm": [
+                            "12px",
+                            {
+                                    "lineHeight": "1.0",
+                                    "letterSpacing": "0.1em",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "28px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "display-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "1.1",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "400"
+                            }
+                    ]
+            }
+        },
+        },
+      }
+    </script>
+<style>
+        .editorial-image-mask {
+            clip-path: inset(0% 0% 0% 0% round 8px);
+            transition: clip-path 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .editorial-image-mask:hover {
+            clip-path: inset(2% 2% 2% 2% round 12px);
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container min-h-screen flex flex-col">
+<!-- TopNavBar (Shared Component) -->
+<nav class="fixed top-0 w-full z-50 bg-surface/90 dark:bg-surface-dim/90 backdrop-blur-md shadow-sm border-b border-outline-variant/30">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-container-max mx-auto">
+<a class="font-display-lg text-display-lg text-primary dark:text-primary-fixed-dim italic" href="#">Soul</a>
+<!-- Desktop Navigation -->
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-body-md text-body-md tracking-widest uppercase" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-body-md text-body-md tracking-widest uppercase" href="#">About</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-body-md text-body-md tracking-widest uppercase" href="#">Collections</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-body-md text-body-md tracking-widest uppercase" href="#">Gallery</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300 font-body-md text-body-md tracking-widest uppercase" href="#">Custom Orders</a>
+<a class="text-primary font-bold border-b border-primary pb-1 font-body-md text-body-md tracking-widest uppercase hover:opacity-80 transition-opacity" href="#">Contact</a>
+</div>
+<!-- Actions -->
+<div class="flex items-center space-x-4">
+<button aria-label="Shopping Bag" class="text-on-surface hover:text-surface-tint transition-all duration-300">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">shopping_bag</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow pt-32 pb-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto w-full">
+<!-- Hero & Form Section -->
+<section class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-start">
+<!-- Text & Form Column -->
+<div class="md:col-span-5 md:col-start-1 lg:col-span-4 lg:col-start-2 order-2 md:order-1 flex flex-col justify-center h-full pt-12 md:pt-0">
+<div class="mb-12">
+<p class="font-label-sm text-label-sm text-tertiary mb-4 uppercase tracking-widest">Concierge Service</p>
+<h1 class="font-display-lg text-display-lg text-on-surface mb-6 leading-tight">Reach Out to Soul</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        Whether you seek a signature scent, desire a bespoke creation, or wish to inquire about wholesale partnerships, our dedicated concierge is here to assist you in crafting moments of tranquility.
+                    </p>
+</div>
+<form action="#" class="space-y-8" method="POST">
+<div class="space-y-6">
+<!-- Name Input -->
+<div class="relative group">
+<input class="w-full bg-transparent border-0 border-b border-outline-variant py-3 font-title-md text-title-md text-on-surface placeholder:text-outline focus:ring-0 focus:border-primary transition-colors duration-300 peer" id="name" name="name" placeholder="Your Name" required="" type="text"/>
+</div>
+<!-- Email Input -->
+<div class="relative group">
+<input class="w-full bg-transparent border-0 border-b border-outline-variant py-3 font-title-md text-title-md text-on-surface placeholder:text-outline focus:ring-0 focus:border-primary transition-colors duration-300 peer" id="email" name="email" placeholder="Email Address" required="" type="email"/>
+</div>
+<!-- Inquiry Type -->
+<div class="relative group">
+<select class="w-full bg-transparent border-0 border-b border-outline-variant py-3 font-title-md text-title-md text-on-surface focus:ring-0 focus:border-primary transition-colors duration-300 appearance-none cursor-pointer" id="interest" name="interest">
+<option class="text-outline" disabled="" selected="" value="">Nature of Inquiry</option>
+<option value="signature">Signature Collection</option>
+<option value="custom">Bespoke / Custom Order</option>
+<option value="wholesale">Wholesale Partnership</option>
+<option value="other">Other</option>
+</select>
+<div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+<span class="material-symbols-outlined text-outline-variant">expand_more</span>
+</div>
+</div>
+<!-- Message Input -->
+<div class="relative group pt-4">
+<textarea class="w-full bg-transparent border-0 border-b border-outline-variant py-3 font-title-md text-title-md text-on-surface placeholder:text-outline focus:ring-0 focus:border-primary transition-colors duration-300 resize-none" id="message" name="message" placeholder="Your Message" required="" rows="4"></textarea>
+</div>
+</div>
+<div class="pt-6">
+<button class="w-full md:w-auto inline-flex items-center justify-center px-10 py-4 bg-primary text-on-primary font-label-sm text-label-sm uppercase tracking-widest hover:bg-surface-tint transition-colors duration-300 shadow-sm hover:shadow-md border border-primary-container" type="submit">
+                            Send Message
+                        </button>
+</div>
+</form>
+<!-- Direct Contact -->
+<div class="mt-16 pt-8 border-t border-outline-variant/30">
+<p class="font-label-sm text-label-sm text-tertiary mb-6 uppercase tracking-widest">Direct Connect</p>
+<div class="flex flex-col space-y-4">
+<a class="inline-flex items-center group" href="#">
+<span class="material-symbols-outlined text-primary mr-3 group-hover:text-tertiary transition-colors">chat</span>
+<span class="font-body-md text-body-md text-on-surface-variant group-hover:text-primary transition-colors">WhatsApp Concierge</span>
+</a>
+<a class="inline-flex items-center group" href="#">
+<span class="material-symbols-outlined text-primary mr-3 group-hover:text-tertiary transition-colors">photo_camera</span>
+<span class="font-body-md text-body-md text-on-surface-variant group-hover:text-primary transition-colors">@soulcandles</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Image Column -->
+<div class="md:col-span-7 md:col-start-6 lg:col-span-6 lg:col-start-7 order-1 md:order-2 h-[60vh] md:h-[85vh] relative">
+<div class="absolute inset-0 bg-surface-container-low rounded-lg editorial-image-mask overflow-hidden shadow-[0_8px_30px_rgb(140,106,94,0.08)]">
+<img alt="Soul Candle High-end Product Shot" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAELoFj3vgNRO8f2MExvxPPE0AwAqjEUW19VYY1NEnaKuJjWnHJqFpAz5U3CbJt19fvMPLjQHVoX6tZF1ktGpgXebNsmlwqL5-2bQ4lLC3n71Ko-FIPe3jncbApdqTSga3i8PXsczrMoSMQ20_3MZSmqPpKDR-aq4tbhxwhHzkWzD-cXGFaB_Q5g2kBt_58XS2ugAu7piHaE47o7bZnf7h_qQYESiMSzfi63fDp0G_5Pkf0c8laPPqlAouLgnQ5JlQEAupHEsgP1cv"/>
+</div>
+</div>
+</section>
+<!-- Studio Section (Visual Break) -->
+<section class="mt-section-gap">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<div class="lg:col-span-8 lg:col-start-3 relative h-[50vh] rounded-xl overflow-hidden shadow-sm group">
+<!-- Placeholder for Map/Studio -->
+<div class="bg-cover bg-center w-full h-full transform group-hover:scale-105 transition-transform duration-1000" data-alt="A cinematic, high-end interior shot of an artisanal candle-making studio. The space is flooded with soft, diffused natural light filtering through large windows. The aesthetic is luxurious and minimal, with warm beige and ivory tones. Elements of organic luxury are present: a marble work surface, meticulously arranged amber glass jars, dried botanicals, and subtle champagne gold accents. The mood is serene, creative, and highly professional, embodying a premium lifestyle brand." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCMi3A8gIFjDnaqGTgPRm1FHUBZPnEY3QzVUWKzWcvE9BtM2d4jaR86eBtp0wE-d2rm9zT788nnoB_cuADE1N0kb40KSlzG2ZLAmIQhnxi0SW3VkP0ubvf0dWOLzEIqZ5grduiZDQAiHKuhBcPQ43gB2Qvnh12b4CsshgnzakT-IsGn1j0TqbCxBrnTD1EXHbYIQF-X1S2kMZ80g16us3uSIgV4XoqCFYW8z2InARJypnvAvpH6oywO2H45a2UNIfqA2iKasXYInwJa')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface/80 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8 md:p-12">
+<p class="font-label-sm text-label-sm text-primary mb-2 uppercase tracking-widest">Our Studio</p>
+<h2 class="font-headline-lg text-headline-lg md:font-display-lg md:text-display-lg text-on-surface">Crafted in Serenity</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 max-w-md">Visits by appointment only for bespoke consultations.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="w-full pt-section-gap pb-12 bg-surface-container-low dark:bg-surface-container-lowest border-t border-outline-variant">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="md:col-span-1">
+<span class="font-display-lg text-display-lg text-primary mb-4 block italic">Soul</span>
+<p class="font-body-md text-body-md text-on-surface-variant mt-4">
+                    © 2024 Soul Candles Made With Love. All Rights Reserved.
+                </p>
+</div>
+<div class="md:col-span-3 flex flex-wrap gap-8 md:justify-end md:items-start pt-4 md:pt-0">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:opacity-80 transition-opacity focus:ring-1 focus:ring-primary rounded px-1" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:opacity-80 transition-opacity focus:ring-1 focus:ring-primary rounded px-1" href="#">Shipping &amp; Returns</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:opacity-80 transition-opacity focus:ring-1 focus:ring-primary rounded px-1" href="#">Wholesale</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary hover:opacity-80 transition-opacity focus:ring-1 focus:ring-primary rounded px-1" href="#">FAQ</a>
+</div>
+</div>
+</footer>
+</body></html>

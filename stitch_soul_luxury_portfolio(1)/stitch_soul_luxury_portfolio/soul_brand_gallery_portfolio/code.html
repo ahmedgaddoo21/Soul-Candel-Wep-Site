@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>The Soul Lookbook | Gallery</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary": "#865046",
+                        "inverse-on-surface": "#f2f0ed",
+                        "on-tertiary-fixed": "#2c160d",
+                        "primary-fixed-dim": "#e9c349",
+                        "inverse-primary": "#e9c349",
+                        "surface-tint": "#735c00",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f5f3ef",
+                        "primary": "#735c00",
+                        "primary-container": "#d4af37",
+                        "tertiary-container": "#d2aa9c",
+                        "secondary-container": "#feb8ab",
+                        "on-primary-container": "#554300",
+                        "surface-variant": "#e4e2de",
+                        "on-tertiary": "#ffffff",
+                        "background": "#fbf9f5",
+                        "on-primary-fixed-variant": "#574500",
+                        "surface-dim": "#dbdad6",
+                        "primary-fixed": "#ffe088",
+                        "on-secondary-fixed": "#351009",
+                        "secondary-fixed": "#ffdad3",
+                        "on-background": "#1b1c1a",
+                        "surface-container": "#efeeea",
+                        "on-primary-fixed": "#241a00",
+                        "on-secondary-container": "#7a473d",
+                        "on-secondary": "#ffffff",
+                        "surface-container-high": "#eae8e4",
+                        "on-tertiary-fixed-variant": "#5d4035",
+                        "surface-container-highest": "#e4e2de",
+                        "inverse-surface": "#30312e",
+                        "tertiary-fixed-dim": "#e7bdaf",
+                        "on-tertiary-container": "#5b3e34",
+                        "on-error": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#fbf9f5",
+                        "tertiary-fixed": "#ffdbcf",
+                        "on-surface": "#1b1c1a",
+                        "on-primary": "#ffffff",
+                        "outline-variant": "#d0c5af",
+                        "surface": "#fbf9f5",
+                        "tertiary": "#77574c",
+                        "error": "#ba1a1a",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#fbb6a8",
+                        "outline": "#7f7663",
+                        "on-secondary-fixed-variant": "#6a3930",
+                        "on-surface-variant": "#4d4635"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "container-max": "1280px",
+                        "section-gap": "120px",
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "margin-mobile": "20px",
+                        "margin-desktop": "64px"
+                    },
+                    fontFamily: {
+                        "headline-lg": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "title-md": ["Playfair Display"],
+                        "label-sm": ["DM Sans"],
+                        "headline-lg-mobile": ["Playfair Display"],
+                        "body-md": ["DM Sans"],
+                        "body-lg": ["DM Sans"]
+                    },
+                    fontSize: {
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "title-md": ["20px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "label-sm": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "1.2", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glow-hover {
+            transition: all 0.5s ease;
+        }
+        .glow-hover:hover {
+            box-shadow: 0 20px 40px -10px rgba(212, 175, 55, 0.15);
+            transform: translateY(-4px);
+        }
+        .floral-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+        .floral-divider::before, .floral-divider::after {
+            content: "";
+            flex: 1;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3); /* primary-container/30 */
+            margin: 0 1rem;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopNavBar -->
+<nav class="w-full top-0 sticky bg-background border-b border-primary-container/20 shadow-sm shadow-secondary/5 z-50 transition-all duration-500 ease-in-out">
+<div class="flex justify-between items-center px-margin-desktop py-unit max-w-container-max mx-auto">
+<a class="font-display-lg text-title-md text-primary tracking-widest uppercase hover:opacity-80 transition-opacity duration-300" href="#">Soul</a>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-primary font-bold border-b border-primary pb-1 font-label-sm text-label-sm uppercase tracking-widest" href="#">Gallery</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors font-label-sm text-label-sm uppercase tracking-widest" href="#">Collection</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors font-label-sm text-label-sm uppercase tracking-widest" href="#">Custom</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors font-label-sm text-label-sm uppercase tracking-widest" href="#">Our Story</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="hidden md:block px-6 py-2 border border-primary-container text-primary font-label-sm text-label-sm uppercase tracking-widest hover:bg-primary-container hover:text-on-primary-container transition-colors duration-300">Shop Now</button>
+<button class="text-primary hover:opacity-80 transition-opacity duration-300">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">shopping_bag</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="w-full max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap">
+<!-- Editorial Header -->
+<header class="text-center max-w-3xl mx-auto mb-24">
+<h1 class="font-display-lg text-display-lg text-primary mb-6">The Soul Lookbook</h1>
+<div class="floral-divider w-1/2 mx-auto">
+<span class="text-primary-container material-symbols-outlined text-sm">local_florist</span>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-6 italic">
+                A visual journey through our handcrafted rituals, captured in the soft glow of intention and light.
+            </p>
+</header>
+<!-- Masonry Gallery -->
+<section class="columns-1 md:columns-2 lg:columns-3 gap-gutter space-y-gutter pb-section-gap">
+<!-- Image 1: Strawberry Cream -->
+<div class="break-inside-avoid relative group overflow-hidden rounded-sm glow-hover bg-surface-container-low p-2">
+<img alt="Handcrafted soy candle topped with realistic wax strawberries and pink cream frosting, sitting on a wooden board amidst fairy lights and soft pink decor." class="w-full object-cover rounded-sm transition-transform duration-700 group-hover:scale-105" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCShEloAecOmPL5HPJkQDglwX8UWgf8o24vVoElnO7r_ywoWvpe0WryGzJ4GejxdjICPArHyxhExzpb9y4mbJBJ5fpf6yUk1Sb0b6JFJg5ayOaRB7punVoVJk4-zH9vSeaNcR_9C4EkM7-iUT2rBYQBJWeQYc99jmGHxTsYhK-qouoFDmlEOgQayvrCcseJgijRzrrBWpgP49La-kDXfOvHcIlNVJXJsMNFzJObGS1jqb31m3ECS8v8AIzpgElQ9yxnooLh1w0R-QnS"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+<span class="font-title-md text-title-md text-primary">Berry Cloud</span>
+</div>
+</div>
+<!-- Image 2: Moon Frame (Tall) -->
+<div class="break-inside-avoid relative group overflow-hidden rounded-sm glow-hover bg-surface-container-low p-2">
+<img alt="Two wooden frames holding wax, one shaped like a crescent moon and the other diamond, intricately embedded with small white wax flowers and twine ribbons, set against a warm beige background with a soft glowing lantern." class="w-full h-[600px] object-cover rounded-sm transition-transform duration-700 group-hover:scale-105" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDN5cRkekc0RPbzL_9td7Cp2-DQAE17yM3oPNJQkY2yYe7MuR3yVH4YwaDwd2RGrUs6anix43Q_UOxFi9SUHAhcYpcYF70OQxcMyrEBz_YoSczNx4PLVmO1niZv09Kroh40qu7C-xs_6gtCf8rsX4fQyfFD1HMsDFYD5ntlnWDGHPwo6Ma1xneFjZvjWl8Fl8PVsJtiEvM1jcs11cyarpvEzshxj_wgd8R7cuRiWzih8KyYfXiPceeb3ZmvQhtaf9Lu5bvFu5niouZP"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+<span class="font-title-md text-title-md text-primary">Lunar Blossom</span>
+</div>
+</div>
+<!-- Image 3: Blue Bouquet -->
+<div class="break-inside-avoid relative group overflow-hidden rounded-sm glow-hover bg-surface-container-low p-2">
+<img alt="A cluster of beautifully detailed soy wax flowers in varying shades of soft blue and white, arranged meticulously in a glass jar to resemble a small, elegant bouquet." class="w-full object-cover rounded-sm transition-transform duration-700 group-hover:scale-105" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4cD8DHK2vhkwk4S1n1ZDovqW8sQyGkktEkqC2ab3Dtki34F9xN1M1wamXqXK8_JTqHIRoDz4rt6ML91Rou9QeLCIwrvhmPx3Z3C_q633MmoujtdcNs5FP7a3ZRrbpF44uy12HVDtNbWswiPCYCl9h_EGWzpLop5pyst-lmq3QpUb8Yjf7G7b9GBBJCLMNyIoy2ScDJiOIvj9tF-zq8gC-zgg_a94zuvsEg_eCFfsulStpRJMHwUWJP4aQx_grJDapit9AlX_4GvvY"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+<span class="font-title-md text-title-md text-primary">Azure Bloom</span>
+</div>
+</div>
+<!-- Image 4: Pink Bouquet -->
+<div class="break-inside-avoid relative group overflow-hidden rounded-sm glow-hover bg-surface-container-low p-2">
+<img alt="A stunning floral arrangement of handcrafted wax roses and peonies in delicate shades of blush pink and cream, nestled within a clear glass vessel on a linen cloth." class="w-full object-cover rounded-sm transition-transform duration-700 group-hover:scale-105" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiE6RIaOT_fiACqqbD0BQIX3W3htoouNKnmQwqefOxrQZHNBdb3aOyuh2HQMVeFedtLtTNeaLeXSk_fGSpUfwFlObn7ID_bZCB3Q7-iNDRDwVW4hLWy60um-pUwOqnKu1UxJHpaEVm1kG2P2u1zoJzTGEHbl7XuDdFp0zfxb2TPsahgCu2aZLIQjA6UpMlUw9vGN-d2QVWnh1NMeMlOEoE8dDAGvAuk9G8zNj40fJ8xNwDyvxF4vXjTX3h29Cf1Suc86l1OOU65tnj"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+<span class="font-title-md text-title-md text-primary">Blush Peony</span>
+</div>
+</div>
+<!-- Image 5: Sunflower/Rose Jars (Wide) -->
+<div class="break-inside-avoid relative group overflow-hidden rounded-sm glow-hover bg-surface-container-low p-2">
+<img alt="A collection of four clear glass jar candles resting on a woven mat. Each candle is uniquely topped with a detailed wax flower: a yellow sunflower, a pink rose, a red rose, and a yellow daisy with a purple center." class="w-full object-cover rounded-sm transition-transform duration-700 group-hover:scale-105" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhjV9hzZRrLiA-p5OU0hAgjRc-6Ix972T8O8jBR-rqsU1ozTt5ZpI-X_cgYBQd9tIJDm9kMxXlsG1Es_rO4qCWiyn2wPrQgb57H68ccMqjykrYVW9oNqns9Vbg5cPdWbSJvPKBM-EKepq3MY6oLFay3H80iePlH0F86Onn8boOaT7vBjRhAhKoHh9KXmXZfIllCG_hnbJwnQdZB__Ua1ZItHgSjg2UIqyA5Pzjqcamy3TPW7Y9N7qI_JKPhWFMchfNVnex_WR_ghQU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+<span class="font-title-md text-title-md text-primary">The Garden Set</span>
+</div>
+</div>
+<!-- Image 6: Marble Jars -->
+<div class="break-inside-avoid relative group overflow-hidden rounded-sm glow-hover bg-surface-container-low p-2">
+<img alt="Three rounded, spherical concrete candle vessels featuring a striking swirl of reddish-brown and cream marble patterns. They sit on a beige surface accompanied by art and fashion books." class="w-full object-cover rounded-sm transition-transform duration-700 group-hover:scale-105" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7d7QpCCPhz3YTeUWwR1i20Z8nYwhxBm3UBoStZYlDVS4DM4XWA9CcJRQ7l9960Vm6jYytfilhyEmoY8fpg-igwdnxgwzH90qnGcCav2CZTdL5CdeoDUX-QXf4VaiaMbC2l6lcCyswWHiQ5I7ErMQjr0O4-zQwnAMZacAkhZaLkuI12Ig5UDMK05KwzMOaRwNZu3MbuxQtgMZsoeIPc_yihExXeCLaAGilYW6kLEUbYLnNcOImhdifNevnuMMEC2Q_uoXv1MVHRc9K"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+<span class="font-title-md text-title-md text-primary">Terracotta Swirl</span>
+</div>
+</div>
+<!-- Image 7: Strawberry in Glass -->
+<div class="break-inside-avoid relative group overflow-hidden rounded-sm glow-hover bg-surface-container-low p-2">
+<img alt="A delicate glass votive filled with creamy white soy wax, elegantly adorned with five incredibly realistic small red wax strawberries. Set against a soft, draped pink silk background with fairy lights and pink roses." class="w-full object-cover rounded-sm transition-transform duration-700 group-hover:scale-105" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdrNh-0L3nQugr4HqwEzNhsBBwJ5ApcdIM6Wrh7YGC7BIHG19Oor1DmCOx40YWCOjMQr6AxesemNWlEJwZaFxOLfvqABx1ObJ9ai-ogx_CuvE1oyovbHYGwIzItKgrMV7lcXcTa22QaJkZc5OznSrQs42dW9-iM2lzVIdqFBb3e6FMTBwIW45oF6D-riuLdOAeXKPqdU2kUcnDkw_UJq_mQZa06aVswpTAlaDxuf_RelMgpsJ7jyMw4YBCpn2yxAiZpeEo3C4CWSbw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end p-6">
+<span class="font-title-md text-title-md text-primary">Silk &amp; Berry</span>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-24 text-center border-t border-primary-container/20">
+<h2 class="font-display-lg text-headline-lg text-primary mb-8">Bring the light home.</h2>
+<div class="flex flex-col sm:flex-row justify-center gap-6">
+<a class="inline-block px-10 py-4 bg-tertiary-container text-on-tertiary-container font-label-sm text-label-sm uppercase tracking-widest hover:bg-secondary-container hover:text-on-secondary-container transition-colors duration-300 rounded-sm" href="#">Shop the Collection</a>
+<a class="inline-block px-10 py-4 border border-primary-container text-primary font-label-sm text-label-sm uppercase tracking-widest hover:bg-surface-container-high transition-colors duration-300 rounded-sm" href="#">Request Custom Order</a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section-gap bg-surface-container-low dark:bg-surface-container-lowest">
+<div class="flex flex-col md:flex-row justify-between items-start px-margin-desktop gap-gutter max-w-container-max mx-auto">
+<div class="mb-8 md:mb-0">
+<a class="font-display-lg text-title-md text-primary tracking-widest uppercase mb-4 block" href="#">Soul</a>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xs">
+                    © 2024 Soul Handmade Candles. Crafted with intention.
+                </p>
+</div>
+<div class="flex flex-col gap-4">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary hover:text-primary transition-colors duration-200 uppercase tracking-widest" href="#">Privacy Policy</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary hover:text-primary transition-colors duration-200 uppercase tracking-widest" href="#">Terms of Service</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary hover:text-primary transition-colors duration-200 uppercase tracking-widest" href="#">Shipping &amp; Returns</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-secondary hover:text-primary transition-colors duration-200 uppercase tracking-widest" href="#">Contact Us</a>
+</div>
+</div>
+</footer>
+</body></html>

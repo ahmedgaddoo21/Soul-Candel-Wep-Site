@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Soul Candle | Handcrafted Luxury Rituals</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=DM+Sans:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        .product-card-glow:hover {
+            box-shadow: 0 20px 40px -15px rgba(115, 92, 0, 0.15);
+            transform: translateY(-8px);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                "secondary-container": "#feb8ab",
+                "inverse-on-surface": "#f2f0ed",
+                "on-primary": "#ffffff",
+                "on-secondary": "#ffffff",
+                "surface-container-high": "#eae8e4",
+                "on-tertiary-fixed-variant": "#5d4035",
+                "error": "#ba1a1a",
+                "surface-tint": "#735c00",
+                "outline-variant": "#d0c5af",
+                "background": "#fbf9f5",
+                "surface": "#fbf9f5",
+                "secondary-fixed-dim": "#fbb6a8",
+                "on-tertiary": "#ffffff",
+                "primary-container": "#d4af37",
+                "on-tertiary-fixed": "#2c160d",
+                "on-primary-container": "#554300",
+                "on-primary-fixed": "#241a00",
+                "on-tertiary-container": "#5b3e34",
+                "on-error-container": "#93000a",
+                "primary-fixed": "#ffe088",
+                "on-background": "#1b1c1a",
+                "primary": "#735c00",
+                "error-container": "#ffdad6",
+                "on-secondary-container": "#7a473d",
+                "on-surface-variant": "#4d4635",
+                "inverse-primary": "#e9c349",
+                "secondary": "#865046",
+                "on-secondary-fixed-variant": "#6a3930",
+                "on-secondary-fixed": "#351009",
+                "on-error": "#ffffff",
+                "tertiary-fixed": "#ffdbcf",
+                "tertiary-fixed-dim": "#e7bdaf",
+                "surface-container-lowest": "#ffffff",
+                "surface-bright": "#fbf9f5",
+                "tertiary-container": "#d2aa9c",
+                "surface-container-highest": "#e4e2de",
+                "surface-variant": "#e4e2de",
+                "secondary-fixed": "#ffdad3",
+                "surface-dim": "#dbdad6",
+                "on-surface": "#1b1c1a",
+                "surface-container-low": "#f5f3ef",
+                "surface-container": "#efeeea",
+                "tertiary": "#77574c",
+                "on-primary-fixed-variant": "#574500",
+                "primary-fixed-dim": "#e9c349",
+                "inverse-surface": "#30312e",
+                "outline": "#7f7663"
+              },
+              "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+              },
+              "spacing": {
+                "gutter": "24px",
+                "container-max": "1280px",
+                "unit": "8px",
+                "section-gap": "120px",
+                "margin-desktop": "64px",
+                "margin-mobile": "20px"
+              },
+              "fontFamily": {
+                "title-md": ["Playfair Display"],
+                "headline-lg": ["Playfair Display"],
+                "body-md": ["DM Sans"],
+                "headline-lg-mobile": ["Playfair Display"],
+                "display-lg": ["Playfair Display"],
+                "body-lg": ["DM Sans"],
+                "label-sm": ["DM Sans"]
+              },
+              "fontSize": {
+                "title-md": ["20px", {"lineHeight": "1.4", "fontWeight": "500"}],
+                "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "600"}],
+                "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                "label-sm": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.1em", "fontWeight": "500"}]
+              }
+            }
+          }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-surface selection:bg-primary-container/30">
+<nav class="fixed top-0 w-full z-50 bg-surface/90 dark:bg-surface-dim/90 backdrop-blur-md border-b border-outline-variant/30 shadow-sm transition-all duration-500">
+<div class="flex justify-between items-center px-margin-desktop py-4 max-w-container-max mx-auto">
+<a class="font-display-lg text-display-lg text-primary dark:text-primary-fixed-dim italic tracking-tighter" href="#">Soul</a>
+<div class="hidden md:flex items-center space-gap-gutter gap-8">
+<a class="font-body-md text-body-md tracking-widest uppercase text-primary font-bold border-b border-primary pb-1" href="#home">Home</a>
+<a class="font-body-md text-body-md tracking-widest uppercase text-on-surface-variant hover:text-primary transition-colors duration-300" href="#about">About</a>
+<a class="font-body-md text-body-md tracking-widest uppercase text-on-surface-variant hover:text-primary transition-colors duration-300" href="#collections">Collections</a>
+<a class="font-body-md text-body-md tracking-widest uppercase text-on-surface-variant hover:text-primary transition-colors duration-300" href="#gallery">Gallery</a>
+<a class="font-body-md text-body-md tracking-widest uppercase text-on-surface-variant hover:text-primary transition-colors duration-300" href="#contact">Contact</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-on-surface-variant hover:text-primary transition-all duration-300 p-2">shopping_bag</button>
+<button class="md:hidden material-symbols-outlined text-on-surface-variant">menu</button>
+</div>
+</div>
+</nav>
+<main class="relative">
+<div class="fixed inset-0 -z-10 overflow-hidden pointer-events-none opacity-40">
+
+</div>
+<!-- Section 1: Hero -->
+<section class="min-h-screen flex flex-col justify-center items-center text-center px-margin-mobile md:px-margin-desktop relative overflow-hidden" id="home">
+<div class="relative z-10 max-w-4xl mx-auto space-y-8">
+<span class="font-label-sm text-label-sm tracking-[0.3em] uppercase text-primary mb-4 block reveal" style="transition-delay: 100ms">Hand-Poured in Small Batches</span>
+<h1 class="font-display-lg text-[64px] md:text-[120px] leading-none text-primary italic reveal" style="transition-delay: 300ms">SOUL CANDLE</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto leading-relaxed reveal" style="transition-delay: 500ms">
+                    Handcrafted candles designed to transform mundane moments into soulful memories. Experience the art of intentional living through light and scent.
+                </p>
+<div class="flex flex-col md:flex-row gap-6 justify-center items-center pt-8 reveal" style="transition-delay: 700ms">
+<a class="px-10 py-4 bg-primary text-on-primary font-body-md text-body-md tracking-widest uppercase rounded-full hover:bg-primary/90 transition-all duration-500 shadow-lg hover:shadow-primary/20" href="#collections">Explore Collection</a>
+<a class="px-10 py-4 border border-primary text-primary font-body-md text-body-md tracking-widest uppercase rounded-full hover:bg-primary hover:text-on-primary transition-all duration-500" href="#contact">Contact Us</a>
+</div>
+</div>
+<div class="absolute bottom-12 left-1/2 -translate-x-1/2 animate-bounce opacity-50">
+<span class="material-symbols-outlined text-primary text-3xl">expand_more</span>
+</div>
+</section>
+<!-- Section 2: About -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto" id="about">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter items-center">
+<div class="md:col-span-7 relative reveal">
+<div class="aspect-[4/5] overflow-hidden rounded-2xl shadow-2xl relative z-10 group">
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCb7YRgdV77d5l6SSeaCktI57Ftz2DNY6pCCIf6eCT7s6esUpFBx9ghVR7SHF8oEZZ94ndcWvt_cMbEX_XvpRP5To1euJ_jHWFILk4JmynRqkfukSYtcMO4rF6bbPjBZPTRaklPXcikQ70kNaSUE-Nohmb-9rBudictnRh6kUUYsm260oX-1A35jyOG3ah723UVjYKjnCOWqzdjvkbYpOJtEpA_B-KOxpfpNoXhl4cIxenTuOv9ZhKwMbrM8jp0JQPQgGSVPtKDTi8n"/>
+</div>
+<div class="absolute -bottom-10 -right-10 w-64 h-64 border border-primary-container/20 -z-10 rounded-full hidden md:block"></div>
+</div>
+<div class="md:col-span-5 space-y-8 md:pl-12 reveal" style="transition-delay: 200ms">
+<div class="w-12 h-[1px] bg-primary mb-4"></div>
+<h2 class="font-display-lg text-display-lg text-primary">Crafting Serenity</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant italic">"We believe that light has the power to change the energy of a home. Our process is a ritual of patience and passion."</p>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                        Every Soul Candle is born from a desire for high-end craftsmanship and sustainable beauty. We use premium soy waxes, essential oils, and lead-free wicks to ensure a clean, long-lasting burn. Each piece is hand-poured in our studio, making every candle a unique work of art.
+                    </p>
+<div class="flex items-center gap-4 text-primary">
+<span class="material-symbols-outlined">eco</span>
+<span class="font-label-sm text-label-sm tracking-widest uppercase">100% Sustainable Wax</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Collections Horizontal Scroll -->
+<section class="bg-surface-container-low py-section-gap overflow-hidden" id="collections">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-12 flex justify-between items-end">
+<div class="reveal">
+<span class="font-label-sm text-label-sm tracking-[0.2em] uppercase text-primary block mb-2">Curated Selections</span>
+<h2 class="font-display-lg text-display-lg text-on-surface">Signature Collections</h2>
+</div>
+<div class="hidden md:flex gap-4 reveal">
+<button class="w-12 h-12 rounded-full border border-outline flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all">
+<span class="material-symbols-outlined">west</span>
+</button>
+<button class="w-12 h-12 rounded-full border border-outline flex items-center justify-center hover:bg-primary hover:text-on-primary transition-all">
+<span class="material-symbols-outlined">east</span>
+</button>
+</div>
+</div>
+<div class="flex overflow-x-auto gap-8 px-margin-mobile md:px-margin-desktop pb-12 snap-x no-scrollbar">
+<div class="min-w-[300px] md:min-w-[450px] snap-center reveal" style="transition-delay: 100ms">
+<div class="group relative overflow-hidden rounded-xl aspect-[16/9]">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBch93LK3gufTbIs4BxZrLmdY6oIipID_vaTAm8YvWNspROPPKZE7e7XMDxfATetRAgo5HzJNdw4WNemhKNHleM1TnCg0GOWY_6Byni6NsPlVjslICNL1u41hTNMdI17CCMWtZzWOFmsWzj7qTopauM_0sxS4xr25SZfRnxsNYVCGOAwlP9XItPU9GEJK0IjE84jvAdmOdsl-Q1AcpBPzKLoswnk4dKT5Yl_0dDsh2bRhb4umZwRMgzIsEeydzii4gNNtntP4YMRL9W"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-8 text-white">
+<h3 class="font-title-md text-title-md">The Floral Series</h3>
+<p class="font-body-md text-body-md opacity-80">Botanical elegance for every room.</p>
+</div>
+</div>
+</div>
+<div class="min-w-[300px] md:min-w-[450px] snap-center reveal" style="transition-delay: 200ms">
+<div class="group relative overflow-hidden rounded-xl aspect-[16/9]">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0TqqbXGnue16dRTT3o3osLsKUlhKVRzZCTDJpVH9AzldmpAE6fl5obigf6Fc864QWkFFMGhyX-jth4QjkhdugqACwsEmY7CxiCWnkBwmMm-X71yRY69RykEUdkjKWJ16Jz9jefqK3KuAAYMN4fBnnpbk1h7eTLZTUwfmjwpSxST-SYqLgF8Iy0qleuzzCT6ukSSaCOdiFMWG0n8PWNS3KNw3MwEbqR2B10Uq4EDQbf_Zao_ShsjhAEN13eBpS-xMhWur1HpXAkegN"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-8 text-white">
+<h3 class="font-title-md text-title-md">Heritage Edition</h3>
+<p class="font-body-md text-body-md opacity-80">Timeless scents rooted in tradition.</p>
+</div>
+</div>
+</div>
+<div class="min-w-[300px] md:min-w-[450px] snap-center reveal" style="transition-delay: 300ms">
+<div class="group relative overflow-hidden rounded-xl aspect-[16/9]">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9kGh3wAng90gEfpM9GJ8nOaTjNzA0Z-Aje2Z5tXJbDQR5IlqAzwF0ATkL9wndyyeRq6ZX99SuY7IctHKN466vR-30QRAzzXNUgOpm-LFVVMOyp2rZFMh1rOeczfsHxJVXsxau8qylqLbm57I3xPEWFnWInos6PYfe6Ld89TKv1VsK6B8BJrhPjzefv0I2rGTHK-HA39dJ0WSxV8O-xRrN7G1SC8hr_2ZMh3Ep-voIMTbq0po6RiNHZII_XRx6qIdEu80NAY4Ngb7Y"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex flex-col justify-end p-8 text-white">
+<h3 class="font-title-md text-title-md">Nocturnal Dreams</h3>
+<p class="font-body-md text-body-md opacity-80">Deep notes for late-night reflection.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Featured Creations -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="text-center mb-16 reveal">
+<h2 class="font-display-lg text-display-lg text-primary">Featured Creations</h2>
+<div class="w-24 h-[2px] bg-primary-container mx-auto mt-4"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+<!-- Card 1 -->
+<div class="reveal group product-card-glow transition-all duration-500" style="transition-delay: 100ms">
+<div class="bg-surface-container-low rounded-2xl overflow-hidden mb-6 relative">
+<div class="aspect-[3/4] overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTAdG9MoGJ-Ru_okP7HTw8u4Fyq2L-mwGQyBd1_bLwaScdoBtHxOXqxSQwHZir0foqpYhYPcwkhDZ-t646d8Ho2A2kuW7tAEZ7rshqyPne9o9q1UbNNjOAd2MVT9uqNdckjRG8lxiZMUmlCcaG_MZK5wSOvvzFgyaDD0y-FqHI5-ANzaMRZGEHp6VMNLWrdEiGeAbogCEIiLl6T_8e4sR4i0qcZjQzTeFHW0bTUA7lel_tQBWmew-5UqFqY-C4AGbsYGbEXDcyFofl"/>
+</div>
+<div class="absolute top-4 right-4 px-3 py-1 bg-white/80 backdrop-blur-md rounded-full text-primary font-label-sm text-label-sm uppercase tracking-widest">Floral</div>
+</div>
+<div class="px-2">
+<div class="flex justify-between items-baseline mb-2">
+<h3 class="font-title-md text-title-md text-on-surface">Flower Bloom Candle</h3>
+<span class="font-body-md text-body-md text-primary font-bold whitespace-nowrap ml-4">350 EGP</span>
+</div>
+<div class="flex flex-col gap-3 mt-6">
+<button class="w-full py-3 border border-outline text-on-surface-variant font-label-sm text-label-sm uppercase tracking-widest hover:bg-on-surface hover:text-surface transition-all rounded-lg">Details</button>
+<button class="w-full py-3 bg-[#25D366] text-white font-label-sm text-label-sm uppercase tracking-widest hover:opacity-90 transition-all rounded-lg flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-lg">chat</span> WhatsApp
+                            </button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="reveal group product-card-glow transition-all duration-500" style="transition-delay: 200ms">
+<div class="bg-surface-container-low rounded-2xl overflow-hidden mb-6 relative">
+<div class="aspect-[3/4] overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4DCB0_2GT-JVwTDrrRy8JgJyALite5lRs-sOypk4xK7k5aPihGn5MKDNm6pc6y9r2acbwptnQC7Mr5WDoGRRKXksEOv8zFTW37uLoFumzj_ZFMLe2Wk1TYp1t-3g7-XKVNxZdBxuVbS02983rW8VbFO2vfoposklBprhkQfto83W1VAUpRjZWWxd1C3U14gPCu3jQpVwZeOS6XSEgoV3Vsj4EFgHkAa43Gq93fn8gTbcXYQ9iOzC3M9vbq9g3wv69ffGzW-jOkgAi"/>
+</div>
+<div class="absolute top-4 right-4 px-3 py-1 bg-white/80 backdrop-blur-md rounded-full text-primary font-label-sm text-label-sm uppercase tracking-widest">Heritage</div>
+</div>
+<div class="px-2">
+<div class="flex justify-between items-baseline mb-2">
+<h3 class="font-title-md text-title-md text-on-surface">Rose Garden Candle</h3>
+<span class="font-body-md text-body-md text-primary font-bold whitespace-nowrap ml-4">420 EGP</span>
+</div>
+<div class="flex flex-col gap-3 mt-6">
+<button class="w-full py-3 border border-outline text-on-surface-variant font-label-sm text-label-sm uppercase tracking-widest hover:bg-on-surface hover:text-surface transition-all rounded-lg">Details</button>
+<button class="w-full py-3 bg-[#25D366] text-white font-label-sm text-label-sm uppercase tracking-widest hover:opacity-90 transition-all rounded-lg flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-lg">chat</span> WhatsApp
+                            </button>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="reveal group product-card-glow transition-all duration-500" style="transition-delay: 300ms">
+<div class="bg-surface-container-low rounded-2xl overflow-hidden mb-6 relative">
+<div class="aspect-[3/4] overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjkFgtXYhC4nnwy9oa0Ytlb3VwlcisN3NLEws-To7hhen-ooyJnBvXylUeVa0_CuIafCUL0yif8KsYkbrbG3ttZKmm6Y3s7CvrHzYSAGLgpGU7uOJo8FlcRfLriGN9SeMWOPPM0O8YyydKnvsfJhXh40q7fJpvvVV_0ERTJlJo1rPs4x7tuuaLMSVHqO3qOnSnNrid-hEMOLN6eeAXCQIze_B636r3A6BKetahd5N_9w5mZxnYUyQTS9u3Y94gYWMk0NzEL2UZHS9R"/>
+</div>
+<div class="absolute top-4 right-4 px-3 py-1 bg-white/80 backdrop-blur-md rounded-full text-primary font-label-sm text-label-sm uppercase tracking-widest">Limited</div>
+</div>
+<div class="px-2">
+<div class="flex justify-between items-baseline mb-2">
+<h3 class="font-title-md text-title-md text-on-surface">Luxury Peony Candle</h3>
+<span class="font-body-md text-body-md text-primary font-bold whitespace-nowrap ml-4">450 EGP</span>
+</div>
+<div class="flex flex-col gap-3 mt-6">
+<button class="w-full py-3 border border-outline text-on-surface-variant font-label-sm text-label-sm uppercase tracking-widest hover:bg-on-surface hover:text-surface transition-all rounded-lg">Details</button>
+<button class="w-full py-3 bg-[#25D366] text-white font-label-sm text-label-sm uppercase tracking-widest hover:opacity-90 transition-all rounded-lg flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-lg">chat</span> WhatsApp
+                            </button>
+</div>
+</div>
+</div>
+<!-- Card 4 (New Vanilla Dream) -->
+<div class="reveal group product-card-glow transition-all duration-500" style="transition-delay: 400ms">
+<div class="bg-surface-container-low rounded-2xl overflow-hidden mb-6 relative">
+<div class="aspect-[3/4] overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0TqqbXGnue16dRTT3o3osLsKUlhKVRzZCTDJpVH9AzldmpAE6fl5obigf6Fc864QWkFFMGhyX-jth4QjkhdugqACwsEmY7CxiCWnkBwmMm-X71yRY69RykEUdkjKWJ16Jz9jefqK3KuAAYMN4fBnnpbk1h7eTLZTUwfmjwpSxST-SYqLgF8Iy0qleuzzCT6ukSSaCOdiFMWG0n8PWNS3KNw3MwEbqR2B10Uq4EDQbf_Zao_ShsjhAEN13eBpS-xMhWur1HpXAkegN"/>
+</div>
+<div class="absolute top-4 right-4 px-3 py-1 bg-white/80 backdrop-blur-md rounded-full text-primary font-label-sm text-label-sm uppercase tracking-widest">Signature</div>
+</div>
+<div class="px-2">
+<div class="flex justify-between items-baseline mb-2">
+<h3 class="font-title-md text-title-md text-on-surface">Vanilla Dream Candle</h3>
+<span class="font-body-md text-body-md text-primary font-bold whitespace-nowrap ml-4">380 EGP</span>
+</div>
+<div class="flex flex-col gap-3 mt-6">
+<button class="w-full py-3 border border-outline text-on-surface-variant font-label-sm text-label-sm uppercase tracking-widest hover:bg-on-surface hover:text-surface transition-all rounded-lg">Details</button>
+<button class="w-full py-3 bg-[#25D366] text-white font-label-sm text-label-sm uppercase tracking-widest hover:opacity-90 transition-all rounded-lg flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-lg">chat</span> WhatsApp
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 5: Interactive Product Showcase (New) -->
+<section class="py-section-gap bg-surface-container-lowest overflow-hidden border-y border-outline-variant/10">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="reveal relative">
+<div class="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl relative group">
+<img class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4DCB0_2GT-JVwTDrrRy8JgJyALite5lRs-sOypk4xK7k5aPihGn5MKDNm6pc6y9r2acbwptnQC7Mr5WDoGRRKXksEOv8zFTW37uLoFumzj_ZFMLe2Wk1TYp1t-3g7-XKVNxZdBxuVbS02983rW8VbFO2vfoposklBprhkQfto83W1VAUpRjZWWxd1C3U14gPCu3jQpVwZeOS6XSEgoV3Vsj4EFgHkAa43Gq93fn8gTbcXYQ9iOzC3M9vbq9g3wv69ffGzW-jOkgAi"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent pointer-events-none"></div>
+</div>
+<div class="absolute -top-6 -right-6 w-32 h-32 bg-primary/5 rounded-full blur-3xl"></div>
+</div>
+<div class="space-y-10 reveal" style="transition-delay: 200ms">
+<div>
+<span class="font-label-sm text-label-sm tracking-[0.4em] uppercase text-primary mb-4 block">Product Spotlight</span>
+<h2 class="font-display-lg text-[48px] md:text-[64px] text-on-surface italic leading-tight">Rose Garden</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-4 italic">A blooming symphony of heritage roses and morning dew.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-outline-variant/30 pt-10">
+<div>
+<h4 class="font-title-md text-title-md text-primary mb-3">Mood</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Sophisticated, romantic, and deeply grounding. Designed to evoke the feeling of an early morning stroll through a royal botanical garden.</p>
+</div>
+<div>
+<h4 class="font-title-md text-title-md text-primary mb-3">Occasion</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Perfect for intimate dinner parties, slow self-care Sundays, or as a centerpiece for your favorite reading nook.</p>
+</div>
+</div>
+<div class="bg-surface-container p-8 rounded-2xl border border-outline-variant/30">
+<h4 class="font-title-md text-title-md text-on-surface mb-3">Design Inspiration</h4>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                                Inspired by the timeless elegance of French perfumery. The Rose Garden features a realistic wax rose bloom hand-carved at the top, ensuring that the visual experience is as intoxicating as the scent itself.
+                            </p>
+</div>
+<div class="flex items-center gap-8">
+<button class="px-12 py-5 bg-primary text-on-primary font-label-sm text-label-sm uppercase tracking-[0.2em] rounded-full hover:shadow-xl hover:shadow-primary/20 transition-all flex items-center gap-3">
+<span class="material-symbols-outlined">chat</span> Order via WhatsApp
+                            </button>
+<span class="text-2xl font-display-lg italic text-primary">420 EGP</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 6: Signature Soul Ritual -->
+<section class="py-section-gap relative overflow-hidden bg-primary text-on-primary">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="reveal">
+<span class="font-label-sm text-label-sm tracking-[0.4em] uppercase opacity-60 mb-4 block">The Experience</span>
+<h2 class="font-display-lg text-[48px] md:text-[64px] mb-8 italic">Signature Soul Ritual</h2>
+<p class="font-body-lg text-body-lg opacity-80 leading-relaxed mb-10 max-w-lg">
+                        Designed like a high-end perfume, the Soul Signature Candle reveals itself in layers. From the first spark to the lingering amber notes, it is a journey of the senses. 
+                    </p>
+<div class="space-y-6">
+<div class="flex items-center gap-6">
+<div class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center font-display-lg text-title-md italic">01</div>
+<div>
+<h4 class="font-title-md text-title-md">Top Notes: Italian Bergamot</h4>
+<p class="font-body-md text-body-md opacity-60">The immediate bright awakening of your space.</p>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center font-display-lg text-title-md italic">02</div>
+<div>
+<h4 class="font-title-md text-title-md">Heart Notes: Peony &amp; Jasmine</h4>
+<p class="font-body-md text-body-md opacity-60">The emotional soul of the fragrance.</p>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="w-12 h-12 rounded-full border border-white/20 flex items-center justify-center font-display-lg text-title-md italic">03</div>
+<div>
+<h4 class="font-title-md text-title-md">Base Notes: Smoked Sandalwood</h4>
+<p class="font-body-md text-body-md opacity-60">A lasting, grounding warmth that remains.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="reveal relative h-[600px]" style="transition-delay: 300ms">
+<img class="w-full h-full object-cover rounded-2xl shadow-2xl animate-float" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUG1iF3jAF_o2rIYG8psf5g6UtraDDogoK0fTQJjzJL-JxIDdPeYrpAwZKavS8m01jSkKVga2E_4bB7K66yJq_AbYFQwGCefQSri5iVVWy5GsQ_9fGyKAIzX4e9jAMf1q83WzNJDPaOv5-ExXIUZfzlu8QoXWxwQQOZVt00pzkl5TKM8D_-Ts9veQGKepy1mU5igHZexRzkeoGUsbdLuDlPr1dvUmvWyfoospUJxAfjOZ5T3sNxe6ppv5ctZf2uG8Jiiz71btF4kFL"/>
+<div class="absolute -bottom-10 -left-10 glass-card p-8 rounded-xl max-w-xs text-on-surface">
+<h4 class="font-title-md text-title-md text-primary mb-2">Soul Signature</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">Our most exclusive creation, hand-signed by the artisan.</p>
+<span class="text-xl font-bold text-primary">550 EGP</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 7: Testimonials (Enhanced) -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface-container-low overflow-hidden">
+<div class="max-w-container-max mx-auto text-center reveal">
+<span class="font-label-sm text-label-sm tracking-[0.2em] uppercase text-primary mb-6 block">Soul Voices</span>
+<h2 class="font-display-lg text-display-lg mb-16 italic">Loved by Conscious Souls</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-left">
+<div class="p-10 bg-white rounded-3xl shadow-sm border border-outline-variant/10 reveal" style="transition-delay: 100ms">
+<div class="flex text-primary mb-6">
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+</div>
+<p class="font-body-lg text-body-lg italic text-on-surface mb-8 leading-relaxed">"The scent throw is incredible. It fills my entire apartment with a soft, natural aroma that never feels overwhelming. A true luxury experience."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center font-display-lg italic text-primary">M</div>
+<div>
+<h5 class="font-title-md text-body-md font-bold">Malak E.</h5>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Cairo, Egypt</p>
+</div>
+</div>
+</div>
+<div class="p-10 bg-white rounded-3xl shadow-sm border border-outline-variant/10 reveal" style="transition-delay: 200ms">
+<div class="flex text-primary mb-6">
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+</div>
+<p class="font-body-lg text-body-lg italic text-on-surface mb-8 leading-relaxed">"The craftsmanship is unparalleled. I've never seen a candle as beautiful as the Rose Garden. It's almost too pretty to burn, but I'm glad I did!"</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center font-display-lg italic text-primary">S</div>
+<div>
+<h5 class="font-title-md text-body-md font-bold">Sarah T.</h5>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Giza, Egypt</p>
+</div>
+</div>
+</div>
+<div class="p-10 bg-white rounded-3xl shadow-sm border border-outline-variant/10 reveal" style="transition-delay: 300ms">
+<div class="flex text-primary mb-6">
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+<span class="material-symbols-outlined fill-1">star</span>
+</div>
+<p class="font-body-lg text-body-lg italic text-on-surface mb-8 leading-relaxed">"Ordering through WhatsApp was so easy. The packaging was stunning and it arrived perfectly. Soul Candle is now my go-to for gifting."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center font-display-lg italic text-primary">N</div>
+<div>
+<h5 class="font-title-md text-body-md font-bold">Nour H.</h5>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Alexandria, Egypt</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 8: Gallery & Lookbook -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto" id="gallery">
+<div class="text-center mb-16 reveal">
+<span class="font-label-sm text-label-sm tracking-[0.2em] uppercase text-primary mb-2 block">The Lookbook</span>
+<h2 class="font-display-lg text-display-lg">Moments of Light</h2>
+</div>
+<div class="columns-1 md:columns-2 lg:columns-3 gap-gutter space-y-gutter">
+<div class="reveal group break-inside-avoid">
+<img class="w-full rounded-xl shadow-lg transition-all duration-500 group-hover:scale-[1.02]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxrRLhxtATFfP9GVKub3YQ68-MdnXeIepSw3oIzEGHUHTHGWFNfYWy4WAXtNP0mCM-TIKNXcLzNE_WrQqPfJJ_Mlhdg4WTydb4ZglSPuOxqf1D0h9MlwIhjCuHM-KIhvZP80A3LyY77odwEohJDrkUemWli4E-yCCZKgj1DfDk57CKGdQ_YrLlrMeEPP0gh8SFwMW0xkuAwKOoIpvVkFzxW3jXFcUloC9v8CA9Ez7nhxTel0C9NUFs0t9KiJyed6qC6WFPyPyyl11V"/>
+</div>
+<div class="reveal group break-inside-avoid" style="transition-delay: 100ms">
+<img class="w-full rounded-xl shadow-lg transition-all duration-500 group-hover:scale-[1.02]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZo7LA4UZHwrAAJk2CI-Z7pY8g2b-X4sBEUqkyVxESJSy7iQ7F6OlhtcWG_WBcAx9Hl0ANpx0gaoSXw6Kwe6V8FZ-TrllcGXcoCzizCiVbhoYbXllpChhEPXKpzNFXgVHCouAO4qXxbQ0NvMv--M4eIpRj-nH0VqtMGm-HFmGm2PKG51hUjPwcJJ69Bp19Dg_id7v7mxpQ57dn0ME2X4Qm3AsFWKKy3db0a7NPneGt5nFLZ9YxadxYvSGG7mYoXZuRISfSGOCm5IqF"/>
+</div>
+<div class="reveal group break-inside-avoid" style="transition-delay: 200ms">
+<img class="w-full rounded-xl shadow-lg transition-all duration-500 group-hover:scale-[1.02]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSeXrUMOqL_q0-Mxo82lub7rHGiFyAktOuT39dp6XWMcL0XlDPrwOTbOoPEu2sYqdH_WWFDzzTguri4UPzpsNTru1Fcodq4HUazVac9Le9xAfp_4t6xC2yJk-tmhJRAsCp4bCI_aK2d3QW3b8YADk_cPe58Cqej5BnOPFU2M0WUNLbJHm1uMAUaIgIq-GaNNlLqcKv3TkYcjISLnkNKyN2Dic79mtHjuqLKnKzGKV5C_USrvxlNse51xxau0kKAoJtSwSTLtWBgasv"/>
+</div>
+<div class="reveal group break-inside-avoid" style="transition-delay: 300ms">
+<img class="w-full rounded-xl shadow-lg transition-all duration-500 group-hover:scale-[1.02]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0TqqbXGnue16dRTT3o3osLsKUlhKVRzZCTDJpVH9AzldmpAE6fl5obigf6Fc864QWkFFMGhyX-jth4QjkhdugqACwsEmY7CxiCWnkBwmMm-X71yRY69RykEUdkjKWJ16Jz9jefqK3KuAAYMN4fBnnpbk1h7eTLZTUwfmjwpSxST-SYqLgF8Iy0qleuzzCT6ukSSaCOdiFMWG0n8PWNS3KNw3MwEbqR2B10Uq4EDQbf_Zao_ShsjhAEN13eBpS-xMhWur1HpXAkegN"/>
+</div>
+<div class="reveal group break-inside-avoid" style="transition-delay: 400ms">
+<img class="w-full rounded-xl shadow-lg transition-all duration-500 group-hover:scale-[1.02]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBch93LK3gufTbIs4BxZrLmdY6oIipID_vaTAm8YvWNspROPPKZE7e7XMDxfATetRAgo5HzJNdw4WNemhKNHleM1TnCg0GOWY_6Byni6NsPlVjslICNL1u41hTNMdI17CCMWtZzWOFmsWzj7qTopauM_0sxS4xr25SZfRnxsNYVCGOAwlP9XItPU9GEJK0IjE84jvAdmOdsl-Q1AcpBPzKLoswnk4dKT5Yl_0dDsh2bRhb4umZwRMgzIsEeydzii4gNNtntP4YMRL9W"/>
+</div>
+</div>
+</section>
+<!-- Section 9: Follow the Glow / Instagram (Polished) -->
+<section class="py-section-gap bg-surface-container overflow-hidden">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center reveal">
+<span class="material-symbols-outlined text-4xl text-primary mb-6">camera_alt</span>
+<h2 class="font-display-lg text-display-lg mb-4">Follow the Glow</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 italic">Join our curated community of scent seekers @soulcandle</p>
+<div class="flex overflow-x-auto gap-6 no-scrollbar pb-12 snap-x">
+<img class="h-80 w-80 object-cover rounded-2xl flex-shrink-0 snap-center shadow-lg hover:shadow-xl transition-shadow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9kGh3wAng90gEfpM9GJ8nOaTjNzA0Z-Aje2Z5tXJbDQR5IlqAzwF0ATkL9wndyyeRq6ZX99SuY7IctHKN466vR-30QRAzzXNUgOpm-LFVVMOyp2rZFMh1rOeczfsHxJVXsxau8qylqLbm57I3xPEWFnWInos6PYfe6Ld89TKv1VsK6B8BJrhPjzefv0I2rGTHK-HA39dJ0WSxV8O-xRrN7G1SC8hr_2ZMh3Ep-voIMTbq0po6RiNHZII_XRx6qIdEu80NAY4Ngb7Y"/>
+<img class="h-80 w-80 object-cover rounded-2xl flex-shrink-0 snap-center shadow-lg hover:shadow-xl transition-shadow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjkFgtXYhC4nnwy9oa0Ytlb3VwlcisN3NLEws-To7hhen-ooyJnBvXylUeVa0_CuIafCUL0yif8KsYkbrbG3ttZKmm6Y3s7CvrHzYSAGLgpGU7uOJo8FlcRfLriGN9SeMWOPPM0O8YyydKnvsfJhXh40q7fJpvvVV_0ERTJlJo1rPs4x7tuuaLMSVHqO3qOnSnNrid-hEMOLN6eeAXCQIze_B636r3A6BKetahd5N_9w5mZxnYUyQTS9u3Y94gYWMk0NzEL2UZHS9R"/>
+<img class="h-80 w-80 object-cover rounded-2xl flex-shrink-0 snap-center shadow-lg hover:shadow-xl transition-shadow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTAdG9MoGJ-Ru_okP7HTw8u4Fyq2L-mwGQyBd1_bLwaScdoBtHxOXqxSQwHZir0foqpYhYPcwkhDZ-t646d8Ho2A2kuW7tAEZ7rshqyPne9o9q1UbNNjOAd2MVT9uqNdckjRG8lxiZMUmlCcaG_MZK5wSOvvzFgyaDD0y-FqHI5-ANzaMRZGEHp6VMNLWrdEiGeAbogCEIiLl6T_8e4sR4i0qcZjQzTeFHW0bTUA7lel_tQBWmew-5UqFqY-C4AGbsYGbEXDcyFofl"/>
+<img class="h-80 w-80 object-cover rounded-2xl flex-shrink-0 snap-center shadow-lg hover:shadow-xl transition-shadow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxrRLhxtATFfP9GVKub3YQ68-MdnXeIepSw3oIzEGHUHTHGWFNfYWy4WAXtNP0mCM-TIKNXcLzNE_WrQqPfJJ_Mlhdg4WTydb4ZglSPuOxqf1D0h9MlwIhjCuHM-KIhvZP80A3LyY77odwEohJDrkUemWli4E-yCCZKgj1DfDk57CKGdQ_YrLlrMeEPP0gh8SFwMW0xkuAwKOoIpvVkFzxW3jXFcUloC9v8CA9Ez7nhxTel0C9NUFs0t9KiJyed6qC6WFPyPyyl11V"/>
+<img class="h-80 w-80 object-cover rounded-2xl flex-shrink-0 snap-center shadow-lg hover:shadow-xl transition-shadow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0TqqbXGnue16dRTT3o3osLsKUlhKVRzZCTDJpVH9AzldmpAE6fl5obigf6Fc864QWkFFMGhyX-jth4QjkhdugqACwsEmY7CxiCWnkBwmMm-X71yRY69RykEUdkjKWJ16Jz9jefqK3KuAAYMN4fBnnpbk1h7eTLZTUwfmjwpSxST-SYqLgF8Iy0qleuzzCT6ukSSaCOdiFMWG0n8PWNS3KNw3MwEbqR2B10Uq4EDQbf_Zao_ShsjhAEN13eBpS-xMhWur1HpXAkegN"/>
+</div>
+<a class="inline-block px-12 py-5 bg-on-surface text-surface font-label-sm text-label-sm tracking-[0.3em] uppercase rounded-full hover:bg-primary transition-all duration-500 shadow-xl" href="https://instagram.com/soulcandle" target="_blank">Discover @soulcandle</a>
+</div>
+</section>
+<!-- Section 10: Contact (Polished) -->
+<section class="py-section-gap relative" id="contact">
+<div class="px-margin-mobile md:px-margin-desktop max-w-4xl mx-auto text-center reveal">
+<h2 class="font-display-lg text-[42px] md:text-[64px] text-primary italic mb-12 leading-tight">Let's Create Beautiful Moments Together</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<a class="p-10 glass-card rounded-3xl hover:bg-primary hover:text-on-primary transition-all duration-700 group flex flex-col items-center shadow-sm" href="https://wa.me/201234567890">
+<div class="w-16 h-16 rounded-full bg-primary/10 group-hover:bg-white/20 flex items-center justify-center mb-6 transition-all">
+<span class="material-symbols-outlined text-4xl group-hover:text-on-primary">chat_bubble</span>
+</div>
+<h4 class="font-title-md text-title-md mb-2">WhatsApp</h4>
+<p class="font-body-md text-body-md opacity-70 group-hover:opacity-90">Bespoke Orders</p>
+</a>
+<a class="p-10 glass-card rounded-3xl hover:bg-primary hover:text-on-primary transition-all duration-700 group flex flex-col items-center shadow-sm" href="https://instagram.com/soulcandle">
+<div class="w-16 h-16 rounded-full bg-primary/10 group-hover:bg-white/20 flex items-center justify-center mb-6 transition-all">
+<span class="material-symbols-outlined text-4xl group-hover:text-on-primary">photo_camera</span>
+</div>
+<h4 class="font-title-md text-title-md mb-2">Instagram</h4>
+<p class="font-body-md text-body-md opacity-70 group-hover:opacity-90">Soul Inspiration</p>
+</a>
+<a class="p-10 glass-card rounded-3xl hover:bg-primary hover:text-on-primary transition-all duration-700 group flex flex-col items-center shadow-sm" href="mailto:hello@soulcandle.com">
+<div class="w-16 h-16 rounded-full bg-primary/10 group-hover:bg-white/20 flex items-center justify-center mb-6 transition-all">
+<span class="material-symbols-outlined text-4xl group-hover:text-on-primary">mail</span>
+</div>
+<h4 class="font-title-md text-title-md mb-2">Email</h4>
+<p class="font-body-md text-body-md opacity-70 group-hover:opacity-90">Luxury Gifting</p>
+</a>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-surface-container-low dark:bg-surface-container-lowest border-t border-outline-variant w-full pt-section-gap pb-12">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<div class="md:col-span-1">
+<span class="font-display-lg text-display-lg text-primary mb-4 block italic">Soul</span>
+<p class="font-body-md text-body-md text-on-surface-variant">Handcrafted candles designed with intentionality and high-end craftsmanship.</p>
+</div>
+<div class="space-y-4">
+<h4 class="font-title-md text-title-md text-primary">Discover</h4>
+<ul class="space-y-2">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="#">Collections</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="#">Our Story</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="#">Gifting</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-title-md text-title-md text-primary">Support</h4>
+<ul class="space-y-2">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="#">Shipping &amp; Returns</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="#">Wholesale</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-all" href="#">FAQ</a></li>
+</ul>
+</div>
+<div class="space-y-4">
+<h4 class="font-title-md text-title-md text-primary">Newsletter</h4>
+<div class="flex">
+<input class="bg-transparent border-b border-outline-variant focus:border-primary focus:ring-0 w-full py-2 font-body-md outline-none" placeholder="Email address" type="email"/>
+<button class="material-symbols-outlined text-primary p-2">arrow_forward</button>
+</div>
+<p class="font-label-sm text-label-sm text-on-surface-variant opacity-60">Join our soulful mailing list for exclusive previews.</p>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-desktop mt-24 text-center">
+<p class="font-body-md text-body-md text-on-surface-variant opacity-60">© 2024 Soul Candles Made With Love. All Rights Reserved.</p>
+</div>
+</footer>
+<script>
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('py-2', 'shadow-md');
+                nav.classList.remove('py-4', 'shadow-sm');
+            } else {
+                nav.classList.remove('py-2', 'shadow-md');
+                nav.classList.add('py-4', 'shadow-sm');
+            }
+        });
+    </script>
+</body></html>

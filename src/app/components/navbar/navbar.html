@@ -1,0 +1,61 @@
+<!-- Top Header (Desktop & Mobile Logo/Cart) -->
+<header class="top-header glass-panel">
+  <div class="header-container flex-between">
+    <!-- Brand Logo -->
+    <a routerLink="/" class="brand-logo font-serif italic">Soul</a>
+    
+    <!-- Desktop Navigation Links -->
+    <nav class="desktop-nav">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+      <a routerLink="/about" routerLinkActive="active">About</a>
+      <a routerLink="/collections" routerLinkActive="active">Collections</a>
+      <a routerLink="/gallery" routerLinkActive="active">Gallery</a>
+      <a routerLink="/contact" routerLinkActive="active">Contact</a>
+    </nav>
+    
+    <!-- Cart Bag Trigger -->
+    <div class="header-actions">
+      <button class="cart-trigger" (click)="openCart()" aria-label="Open Shopping Cart">
+        <span class="material-symbols-outlined bag-icon">shopping_bag</span>
+        <span class="cart-badge flex-center" *ngIf="cartService.totalCount() > 0">
+          {{ cartService.totalCount() }}
+        </span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Bottom Navigation (Visible only on mobile/tablet) -->
+<nav class="mobile-bottom-nav glass-panel">
+  <div class="bottom-nav-container">
+    <!-- Home -->
+    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="bottom-nav-item">
+      <span class="material-symbols-outlined">home</span>
+      <span class="item-label">Home</span>
+    </a>
+    
+    <!-- Collections -->
+    <a routerLink="/collections" routerLinkActive="active" class="bottom-nav-item">
+      <span class="material-symbols-outlined">local_florist</span>
+      <span class="item-label">Collections</span>
+    </a>
+    
+    <!-- About -->
+    <a routerLink="/about" routerLinkActive="active" class="bottom-nav-item">
+      <span class="material-symbols-outlined">history</span>
+      <span class="item-label">Our Story</span>
+    </a>
+
+    <!-- Gallery -->
+    <a routerLink="/gallery" routerLinkActive="active" class="bottom-nav-item">
+      <span class="material-symbols-outlined">photo_camera</span>
+      <span class="item-label">Lookbook</span>
+    </a>
+
+    <!-- Contact -->
+    <a routerLink="/contact" routerLinkActive="active" class="bottom-nav-item">
+      <span class="material-symbols-outlined">chat</span>
+      <span class="item-label">Contact</span>
+    </a>
+  </div>
+</nav>
